@@ -9,7 +9,7 @@ It follows this basic model:
 	   +----+                -    a --+|user_role|+--
 	     +                   -         +---------+
 	     |                   -
-	     |                   -
+	   a |                   -
 	     +                   +         +---------+
 	   +----+      b      +----+  b --+|role_perm|+--
 	   |role|+-----------+|perm|       +---------+
