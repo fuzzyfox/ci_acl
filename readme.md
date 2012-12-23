@@ -53,9 +53,6 @@ The table names can be changed within the `application/config/acl.php` file.
 	   |user       |
 	   |-----------|
 	   |user_id    <--+
-	   |name       |  |
-	   |email      |  |
-	   |password   |  |
 	   +-----------+  |
 	                  |
 	   +-----------+  |
@@ -73,7 +70,9 @@ The table names can be changed within the `application/config/acl.php` file.
 	   |description|       |perm_id    +---+   |value      |
 	   +-----------+       +-----------+       +-----------+
 
-The schema for these tables as defined above can be found in `acl_schema.sql`, this contains extra information such as field types, and primary keys.
+The schema for these tables as defined above can be found in `acl_schema.sql`, this contains extra information such as field types, and primary keys. The schema provided, along with the example usage also come with a basic user login. This aids in testing, as well as sets a ground work for you to build on in your own CodeIgniter applications. 
+
+**NB:** You will probably want to beef up the security on the user login a little for a production system. The login system provided is much more basic, and for example usage. The ACL provided is **JUST** the permissions and role structure.
 
 ## License
 All code in this project is subject to the terms of the [Mozilla Public License, v. 2.0](http://mozilla.org/MPL/2.0/) except where otherwise noted.

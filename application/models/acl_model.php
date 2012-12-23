@@ -34,7 +34,7 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function get_all_users() {
-		$users = $this->db->get($this->_config->table['user']);
+		$users = $this->db->get($this->_config->table['users']);
 		return ($users->num_rows() > 0) ? $users->result() : FALSE;
 	}
 	
@@ -74,7 +74,7 @@ class ACL_model extends CI_model {
 	 */
 	public function add_user($data) {
 		$this->db->insert($this->_config->table['user'], $data);
-		return ($this->affected_rows() == 1);
+		return ($this->db->affected_rows() == 1);
 	}
 	
 	/**
@@ -86,7 +86,7 @@ class ACL_model extends CI_model {
 	 */
 	public function del_user($user_id) {
 		$this->db->delete($this->_config->table['user'], array('user_id' => $user_id));
-		return ($this->affected_rows() == 1);
+		return ($this->db->affected_rows() == 1);
 	}
 	
 	/**
@@ -99,7 +99,7 @@ class ACL_model extends CI_model {
 	 */
 	public function edit_user($user_id, $data) {
 		$this->db->update($this->_config->table['user'], $data, array('user_id' => $user_id));
-		return ($this->affected_rows() == 1);
+		return ($this->db->affected_rows() == 1);
 	}
 	
 	/*
@@ -121,6 +121,9 @@ class ACL_model extends CI_model {
 			->from($this->_config->table['user_role'])
 			->where('user_id', $user_id)
 			->join($this->_config->table['role'], $this->_config->table['role'] . '.role_id = ' . $this->_config->table['user_role'] . '.role_id', 'inner');
+		
+		$role = $this->db->get();
+		return ($role->num_rows() > 0) ? $role->result() : FALSE;
 	}
 	
 	/**
@@ -132,7 +135,11 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function add_user_role($user_id, $role_id) {
-		
+		$this->db->insert($this->_config->table['user_role'], array(
+			'user_id' => $user_id,
+			'role_id' => $role_id
+		));
+		return ($this->db->affected_rows() == 1);
 	}
 	
 	/**
@@ -144,7 +151,11 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function del_user_role($user_id, $role_id) {
-		
+		$this->db->delete($this->_config->table['user_role'], array(
+			'user_id' => $user_id,
+			'role_id' => $role_id
+		));
+		return ($this->db->affected_rows() == 1);
 	}
 	
 	/*
@@ -162,7 +173,13 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function get_role_perms($role_id) {
+		$this->db->select($this->_config->table['perm'] . '.*')
+		->from($this->_config->table['role_perm'])
+		->where('role_id', $role_id)
+		->join($this->_config->table['perm'], $this->_config->table['perm'] . '.role_id = ' . $this->_config->table['role_perm'] . '.role_id');
 		
+		$perms = $this->db->get();
+		return ($perms->num_rows() > 0) ? $perms->result() : FALSE;
 	}
 	
 	/**
@@ -174,7 +191,11 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function add_role_perm($role_id, $perm_id) {
-		
+		$this->db->insert($this->_config->table['role_perm'], array(
+			'role_id' => $role_id,
+			'perm_id' => $perm_id
+		));
+		return ($this->db->affected_rows() == 1);
 	}
 	
 	/**
@@ -186,7 +207,11 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function del_role_perm($role_id, $perm_id) {
-		
+		$this->db->delete($this->_config->table['role_perm'], array(
+			'role_id' => $role_id,
+			'perm_id' => $perm_id
+		));
+		return ($this->db->affected_rows() == 1);
 	}
 	
 }
