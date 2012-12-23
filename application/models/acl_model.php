@@ -188,6 +188,90 @@ class ACL_model extends CI_model {
 	
 	/*
 	| -------------------------------------------------------------------
+	|  role specific methods
+	| -------------------------------------------------------------------
+	*/
+	
+	/**
+	 * get all roles details
+	 *
+	 * @return	array	an array of CodeIgniter row objects for role
+	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter result object
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function get_all_roles() {
+		$roles = $this->db->get($this->_config->table['role']);
+		return ($roles->num_rows() > 0) ? $roles->result() : FALSE;
+	}
+	
+	/**
+	 * get roles by constraint
+	 *
+	 * @param	string	$field	the field to constrain
+	 * @param	mixed	$value	the required value of field
+	 * @return	object	a CodeIgniter row object for role
+	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter row object
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function get_role_by($field, $value) {
+		$this->db->where($field, $value);
+		return $this->get_all_roles();
+	}
+	
+	/**
+	 * get details of a role
+	 *
+	 * @param	int		$role_id	the unique identifier for the role
+	 * @return	object	a CodeIgniter row object for role
+	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter row object
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 *
+	 * @todo	return permissions associated w/ role as well
+	 */
+	public function get_role($role_id) {
+		$role = $this->get_role_by('role_id', $role_id);
+		return ($role !== FALSE) ? $role[0] : FALSE;
+	}
+	
+	/**
+	 * add new role to database
+	 *
+	 * @param	string	$data		the new roles data	
+	 * @return	boolean	TRUE/FALSE - whether addition was successful
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function add_role($data) {
+		$this->db->insert($this->_config->table['role'], $data);
+		return ($this->db->affected_rows() == 1);
+	}
+	
+	/**
+	 * remove role from database
+	 *
+	 * @param	int		$role_id	the unique identifier for the role
+	 * @return	boolean	TRUE/FALSE - whether addition was successful
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function del_role($role_id) {
+		$this->db->insert($this->_config->table['role'], array('role_id' => $role_id));
+		return ($this->db->affected_rows() == 1);
+	}
+	
+	/**
+	 * update a roles data
+	 *
+	 * @param	int		$role_id	the unique identifier for the role
+	 * @param	string	$data		the new roles data	
+	 * @return	boolean	TRUE/FALSE - whether update was successful
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function edit_role($role_id, $data) {
+		$this->db->update($this->_config->table['role'], $data, array('role_id' => $role_id));
+		return ($this->db->affected_rows() == 1);
+	}
+	
+	/*
+	| -------------------------------------------------------------------
 	|  role permission relations
 	| -------------------------------------------------------------------
 	*/
@@ -196,7 +280,7 @@ class ACL_model extends CI_model {
 	 * get permission a role has
 	 *
 	 * @param	int		$role_id	the unique identifier for the role
-	 * @return	array	array of CodeIgniter row objects for user
+	 * @return	array	array of CodeIgniter row objects for role permissions
 	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter result object
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
@@ -239,6 +323,88 @@ class ACL_model extends CI_model {
 			'role_id' => $role_id,
 			'perm_id' => $perm_id
 		));
+		return ($this->db->affected_rows() == 1);
+	}
+	
+	/*
+	| -------------------------------------------------------------------
+	|  permission specific methods
+	| -------------------------------------------------------------------
+	*/
+	
+	/**
+	 * get all permissions
+	 *
+	 * @return	array	an array of CodeIgniter row objects for permission
+	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter result object
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function get_all_perms() {
+		$perms = $this->db->get($this->_config->table['perm']);
+		return ($perms->num_rows() > 0) ? $perms->result() : FALSE;
+	}
+	
+	/**
+	 * get permission by constraint
+	 *
+	 * @param	string	$field	the field to constrain
+	 * @param	mixed	$value	the value field should be
+	 * @return	array	an array of CodeIgniter row objects for permission
+	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter result object
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function get_perm_by($field, $value) {
+		$this->db->where($field, $value);
+		return $this->get_all_perms();
+	}
+	
+	/**
+	 * get a specific permissions
+	 *
+	 * @param	int	$perm_id	the unique identifier for the permission (id not value)
+	 * @return	object	a CodeIgniter row object for permission
+	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter row object
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function get_perm($perm_id) {
+		$perm = $this->get_perm_by('perm_id', $perm_id);
+		return ($perm !== FALSE) ? $perm[0] : FALSE;
+	}
+	
+	/**
+	 * add a permission
+	 *
+	 * @param	assoc_array	$data	the new permissions data
+	 * @return	boolean		TRUE/FALSE - whether addition was successful
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function add_perm($data) {
+		$this->db->insert($this->_config->table['perm'], $data);
+		return ($this->db->affected_rows() == 1);
+	}
+	
+	/**
+	 * delete a permission
+	 *
+	 * @param	int		$perm_id	the unique identifier for the permission (id not value)
+	 * @return	boolean	TRUE/FALSE - whether addition was successful
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function del_perm($perm_id) {
+		$this->db->delete($this->_config->table['perm'], array('perm_id' => $perm_id));
+		return ($this->db->affected_rows() == 1);
+	}
+	
+	/**
+	 * update a permission
+	 *
+	 * @param	int			$perm_id	the unique identifier for the permission (id not value)
+	 * @param	assoc_array	$data		the new data for permission
+	 * @return	boolean		TRUE/FALSE - whether or not update successful
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function edit_perm($perm_id, $data) {
+		$this->db->update($this->_config->table['perm'], $data, array('perm_id' => $perm_id));
 		return ($this->db->affected_rows() == 1);
 	}
 	
