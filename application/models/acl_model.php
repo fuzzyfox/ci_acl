@@ -1,5 +1,33 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+/**
+ * CI_ACL
+ * 
+ * Yet another ACL implementation for CodeIgniter. More specifically this is 
+ * a role-based access control list for CodeIgniter.
+ * 
+ * @package		CI_ACL
+ * @author		William Duyck <fuzzyfox0@gmail.com>
+ * @copyright	Copyright (c) 2012, William Duyck
+ * @license		http://www.mozilla.org/MPL/2.0/ Mozilla Public License 2.0
+ * @since		2012.12.23
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * Staff Model
+ * 
+ * Provides a set of simple functions for interacting with data relating to 
+ * staff (social workers, senior social workers, administrators).
+ * 
+ * @package		CI_ACL
+ * @subpackage	Models
+ * @author		William Duyck <wemd2@kent.ac.uk>
+ * @category	ACL
+ *
+ * @todo	test logic, not just sytax
+ */
 class ACL_model extends CI_model {
 	
 	/**
@@ -226,6 +254,8 @@ class ACL_model extends CI_model {
 	 * @param	int	$user_id	the unique identifier for the user
 	 * @return	int	the permission values the user has added together (0 if no permissions)
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 *
+	 * @todo	refactor code to use complex sql **instead** of rest of model, and multiple sql calls.
 	 */
 	public function get_user_perm($user_id) {
 		// hold on tight... this is a complicated one... and will be 
