@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a11" title="">
+  <file path="config/acl.php" hash="80d592dc85439a48d32998064a1f05fe" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/acl.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/autoload.php" hash="eb039dca80217677aebd7290e5d5f9e2" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/autoload.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/config.php" hash="ee53ce0bfcec5fa398b4c1da89bcf9a7" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/config.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/constants.php" hash="e93fdab82a82378fb4793d489e4f2672" package="Default">
+    <constant namespace="global" line="16" package="Default">
+      <name>FILE_READ_MODE</name>
+      <full_name>\FILE_READ_MODE</full_name>
+      <value>420</value>
+    </constant>
+    <constant namespace="global" line="17" package="Default">
+      <name>FILE_WRITE_MODE</name>
+      <full_name>\FILE_WRITE_MODE</full_name>
+      <value>438</value>
+    </constant>
+    <constant namespace="global" line="18" package="Default">
+      <name>DIR_READ_MODE</name>
+      <full_name>\DIR_READ_MODE</full_name>
+      <value>493</value>
+    </constant>
+    <constant namespace="global" line="19" package="Default">
+      <name>DIR_WRITE_MODE</name>
+      <full_name>\DIR_WRITE_MODE</full_name>
+      <value>511</value>
+    </constant>
+    <constant namespace="global" line="30" package="Default">
+      <name>FOPEN_READ</name>
+      <full_name>\FOPEN_READ</full_name>
+      <value/>
+    </constant>
+    <constant namespace="global" line="31" package="Default">
+      <name>FOPEN_READ_WRITE</name>
+      <full_name>\FOPEN_READ_WRITE</full_name>
+      <value/>
+    </constant>
+    <constant namespace="global" line="32" package="Default">
+      <name>FOPEN_WRITE_CREATE_DESTRUCTIVE</name>
+      <full_name>\FOPEN_WRITE_CREATE_DESTRUCTIVE</full_name>
+      <value/>
+    </constant>
+    <constant namespace="global" line="33" package="Default">
+      <name>FOPEN_READ_WRITE_CREATE_DESTRUCTIVE</name>
+      <full_name>\FOPEN_READ_WRITE_CREATE_DESTRUCTIVE</full_name>
+      <value/>
+    </constant>
+    <constant namespace="global" line="34" package="Default">
+      <name>FOPEN_WRITE_CREATE</name>
+      <full_name>\FOPEN_WRITE_CREATE</full_name>
+      <value/>
+    </constant>
+    <constant namespace="global" line="35" package="Default">
+      <name>FOPEN_READ_WRITE_CREATE</name>
+      <full_name>\FOPEN_READ_WRITE_CREATE</full_name>
+      <value/>
+    </constant>
+    <constant namespace="global" line="36" package="Default">
+      <name>FOPEN_WRITE_CREATE_STRICT</name>
+      <full_name>\FOPEN_WRITE_CREATE_STRICT</full_name>
+      <value/>
+    </constant>
+    <constant namespace="global" line="37" package="Default">
+      <name>FOPEN_READ_WRITE_CREATE_STRICT</name>
+      <full_name>\FOPEN_READ_WRITE_CREATE_STRICT</full_name>
+      <value/>
+    </constant>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/constants.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/database.php" hash="06ed1d85f042169c42c04f20681ac10e" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/database.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/development/config.php" hash="3eb9124a413bdc8d41fa61c2c82c572a" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/development/config.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/development/database.php" hash="888fc6757116b47f32fe2e0b92b10959" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/development/database.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/doctypes.php" hash="c09ab8b69610b20cc1847f34321cdff0" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/doctypes.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/foreign_chars.php" hash="9e0d5b6e91b7a9be1a5f5cd0a99c9180" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/foreign_chars.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/hooks.php" hash="f4d8671d8fd77d88d8bbafe305b830f9" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/hooks.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/migration.php" hash="c2f5e54c86bc591f9a1d19da23e252b3" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/migration.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/mimes.php" hash="c20f8d96b69abc12b7183eab6768989c" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/mimes.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/profiler.php" hash="eb518eaaf53ca86ba80c80293374b7a9" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/profiler.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/routes.php" hash="72b0e5fc815e700fdbcd6161280968bb" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/routes.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/smileys.php" hash="694f5d7fcebc05b9da5545d82c4aa042" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/smileys.php</error>
+    </parse_markers>
+  </file>
+  <file path="config/user_agents.php" hash="7eb65e7644accfa3981b4ad5b9660d20" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file config/user_agents.php</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/welcome.php" hash="cc854a830832815cc276e59a7b92058a" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends>\CI_Controller</extends>
+      <name>Welcome</name>
+      <full_name>\Welcome</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="20" package="Default">
+        <name>index</name>
+        <full_name>index</full_name>
+        <docblock line="5">
+          <description>Index Page for this controller.</description>
+          <long-description>&lt;p&gt;Maps to the following URL
+        http://example.com/index.php/welcome
+- or -
+        http://example.com/index.php/welcome/index
+- or -
+Since this controller is set as the default controller in
+config/routes.php, it's displayed at http://example.com/&lt;/p&gt;
+
+&lt;p&gt;So any other public methods not prefixed with an underscore will
+map to /index.php/welcome/&lt;method_name&gt;&lt;/p&gt;</long-description>
+          <tag line="5" name="see" description="\global\http://codeigniter.com/user_guide/general/urls.html" refers="\global\http://codeigniter.com/user_guide/general/urls.html"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/welcome.php</error>
+      <error line="3" code="50000">No DocBlock was found for \Welcome</error>
+    </parse_markers>
+  </file>
+  <file path="errors/error_404.php" hash="be0acb0a9578bf326c8619b3054d2729" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file errors/error_404.php</error>
+    </parse_markers>
+  </file>
+  <file path="errors/error_db.php" hash="01debc5a89e7e57725d41c63004b4077" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file errors/error_db.php</error>
+    </parse_markers>
+  </file>
+  <file path="errors/error_general.php" hash="cdb3bf47b07464db57b7eaf5541ed246" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file errors/error_general.php</error>
+    </parse_markers>
+  </file>
+  <file path="errors/error_php.php" hash="f4ab89a1c904098a1253e34b0a72e42d" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file errors/error_php.php</error>
+    </parse_markers>
+  </file>
+  <file path="libraries/acl.php" hash="2159ae4b44654e9f068ed7a618eb3aee" package="Default">
+    <class final="false" abstract="false" namespace="global" line="3" package="Default">
+      <extends/>
+      <name>ACL</name>
+      <full_name>\ACL</full_name>
+      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
+        <name>$_ci</name>
+        <default/>
+        <docblock line="5">
+          <description>CodeIgniter instance</description>
+          <long-description/>
+          <tag line="5" name="var" description="" type="\CodeIgniter">
+            <type by_reference="false">\CodeIgniter</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="16" namespace="global" package="Default">
+        <name>$model</name>
+        <default/>
+        <docblock line="11">
+          <description>acl model</description>
+          <long-description/>
+          <tag line="11" name="var" description="" type="\ACL_model">
+            <type by_reference="false">\ACL_model</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="18">
+          <description>constructor</description>
+          <long-description/>
+          <tag line="18" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file libraries/acl.php</error>
+      <error line="3" code="50000">No DocBlock was found for \ACL</error>
+    </parse_markers>
+  </file>
+  <file path="models/acl_model.php" hash="415a8b61ae6a405782d52cbdf9ee1fba" package="Default">
+    <class final="false" abstract="false" namespace="global" line="30" package="ACL\Models">
+      <extends>\CI_model</extends>
+      <name>ACL_model</name>
+      <full_name>\ACL_model</full_name>
+      <docblock line="18">
+        <description>ACL Model</description>
+        <long-description>&lt;p&gt;Provides a set of simple functions for interacting with data relating to
+user roles and permissions&lt;/p&gt;</long-description>
+        <tag line="18" name="package" description="ACL"/>
+        <tag line="18" name="subpackage" description="Models"/>
+        <tag line="18" name="author" description="William Duyck &lt;wemd2@kent.ac.uk&gt;"/>
+        <tag line="18" name="todo" description="test logic, not just sytax"/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="37" namespace="global" package="Default">
+        <name>$_config</name>
+        <default/>
+        <docblock line="32">
+          <description>acl config shortcut</description>
+          <long-description/>
+          <tag line="32" name="var" description="" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="44" package="ACL\Models">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="39">
+          <description>constructor</description>
+          <long-description/>
+          <tag line="39" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="63" package="ACL\Models">
+        <name>get_all_users</name>
+        <full_name>get_all_users</full_name>
+        <docblock line="56">
+          <description>get all users details</description>
+          <long-description/>
+          <tag line="56" name="return" description="an array of CodeIgniter row objects for user" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="56" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="56" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="77" package="ACL\Models">
+        <name>get_user_by</name>
+        <full_name>get_user_by</full_name>
+        <docblock line="68">
+          <description>get specific user details by constraint</description>
+          <long-description/>
+          <tag line="68" name="param" description="the field to constrain by" type="string" variable="$field">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="68" name="param" description="the required value of field" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="68" name="return" description="an array of CodeIgniter row objects for user" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="68" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="68" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="77">
+          <name>$field</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="77">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="90" package="ACL\Models">
+        <name>get_user</name>
+        <full_name>get_user</full_name>
+        <docblock line="82">
+          <description>get user details</description>
+          <long-description/>
+          <tag line="82" name="param" description="the unique identifier for the user to get" type="int" variable="$user_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="82" name="return" description="a CodeIgniter row object for user" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="82" name="see" description="Documentation for CodeIgniter row object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="82" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="90">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="102" package="ACL\Models">
+        <name>add_user</name>
+        <full_name>add_user</full_name>
+        <docblock line="95">
+          <description>add user to database</description>
+          <long-description/>
+          <tag line="95" name="param" description="associative array of data to add into `user` table" type="\assoc_array" variable="$data">
+            <type by_reference="false">\assoc_array</type>
+          </tag>
+          <tag line="95" name="return" description="TRUE/FALSE - whether or not addition was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="95" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="102">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="114" package="ACL\Models">
+        <name>del_user</name>
+        <full_name>del_user</full_name>
+        <docblock line="107">
+          <description>delete user from database</description>
+          <long-description/>
+          <tag line="107" name="param" description="the unique identifier for the user to get" type="int" variable="$user_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="107" name="return" description="TRUE/FALSE - whether or not the deletion was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="107" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="114">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="127" package="ACL\Models">
+        <name>edit_user</name>
+        <full_name>edit_user</full_name>
+        <docblock line="119">
+          <description>update user details</description>
+          <long-description/>
+          <tag line="119" name="param" description="the unique identifier for the user to get" type="int" variable="$user_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="119" name="param" description="the new data for the user" type="\assoc_array" variable="$data">
+            <type by_reference="false">\assoc_array</type>
+          </tag>
+          <tag line="119" name="return" description="TRUE/FALSE - whether or not the changes were successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="119" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="127">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="127">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="146" package="ACL\Models">
+        <name>get_user_role</name>
+        <full_name>get_user_role</full_name>
+        <docblock line="138">
+          <description>get users role</description>
+          <long-description/>
+          <tag line="138" name="param" description="the unique identifier for the user to get" type="string" variable="$user_id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="138" name="return" description="array of CodeIgniter row objects for user" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="138" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="138" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="146">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="164" package="ACL\Models">
+        <name>add_user_role</name>
+        <full_name>add_user_role</full_name>
+        <docblock line="156">
+          <description>assign user to role</description>
+          <long-description/>
+          <tag line="156" name="param" description="the unique identifier for the user to assign" type="int" variable="$user_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="156" name="param" description="the unique identifier for the role to assign" type="int" variable="$role_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="156" name="return" description="TRUE/FALSE - whether or not the assignment was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="156" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="164">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="164">
+          <name>$role_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="180" package="ACL\Models">
+        <name>del_user_role</name>
+        <full_name>del_user_role</full_name>
+        <docblock line="172">
+          <description>remove user from role</description>
+          <long-description/>
+          <tag line="172" name="param" description="the unique identifier for the user" type="int" variable="$user_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="172" name="param" description="the unique identifier for the role" type="int" variable="$role_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="172" name="return" description="TRUE/FALSE - whether or not the removal was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="172" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="180">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="180">
+          <name>$role_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="201" package="ACL\Models">
+        <name>get_all_roles</name>
+        <full_name>get_all_roles</full_name>
+        <docblock line="194">
+          <description>get all roles details</description>
+          <long-description/>
+          <tag line="194" name="return" description="an array of CodeIgniter row objects for role" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="194" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="194" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="215" package="ACL\Models">
+        <name>get_role_by</name>
+        <full_name>get_role_by</full_name>
+        <docblock line="206">
+          <description>get roles by constraint</description>
+          <long-description/>
+          <tag line="206" name="param" description="the field to constrain" type="string" variable="$field">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="206" name="param" description="the required value of field" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="206" name="return" description="a CodeIgniter row object for role" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="206" name="see" description="Documentation for CodeIgniter row object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="206" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="215">
+          <name>$field</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="215">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="230" package="ACL\Models">
+        <name>get_role</name>
+        <full_name>get_role</full_name>
+        <docblock line="220">
+          <description>get details of a role</description>
+          <long-description/>
+          <tag line="220" name="param" description="the unique identifier for the role" type="int" variable="$role_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="220" name="return" description="a CodeIgniter row object for role" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="220" name="see" description="Documentation for CodeIgniter row object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="220" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+          <tag line="220" name="todo" description="return permissions associated w/ role as well"/>
+        </docblock>
+        <argument line="230">
+          <name>$role_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="242" package="ACL\Models">
+        <name>add_role</name>
+        <full_name>add_role</full_name>
+        <docblock line="235">
+          <description>add new role to database</description>
+          <long-description/>
+          <tag line="235" name="param" description="the new roles data" type="string" variable="$data">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="235" name="return" description="TRUE/FALSE - whether addition was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="235" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="242">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="254" package="ACL\Models">
+        <name>del_role</name>
+        <full_name>del_role</full_name>
+        <docblock line="247">
+          <description>remove role from database</description>
+          <long-description/>
+          <tag line="247" name="param" description="the unique identifier for the role" type="int" variable="$role_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="247" name="return" description="TRUE/FALSE - whether addition was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="247" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="254">
+          <name>$role_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="267" package="ACL\Models">
+        <name>edit_role</name>
+        <full_name>edit_role</full_name>
+        <docblock line="259">
+          <description>update a roles data</description>
+          <long-description/>
+          <tag line="259" name="param" description="the unique identifier for the role" type="int" variable="$role_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="259" name="param" description="the new roles data" type="string" variable="$data">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="259" name="return" description="TRUE/FALSE - whether update was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="259" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="267">
+          <name>$role_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="267">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="286" package="ACL\Models">
+        <name>get_role_perms</name>
+        <full_name>get_role_perms</full_name>
+        <docblock line="278">
+          <description>get permission a role has</description>
+          <long-description/>
+          <tag line="278" name="param" description="the unique identifier for the role" type="int" variable="$role_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="278" name="return" description="array of CodeIgniter row objects for role permissions" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="278" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="278" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="286">
+          <name>$role_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="304" package="ACL\Models">
+        <name>add_role_perm</name>
+        <full_name>add_role_perm</full_name>
+        <docblock line="296">
+          <description>add permission to role</description>
+          <long-description/>
+          <tag line="296" name="param" description="the unique identifier for the role" type="int" variable="$role_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="296" name="param" description="the unique identifier for the permission" type="int" variable="$perm_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="296" name="return" description="TRUE/FALSE - whether or not addition was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="296" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="304">
+          <name>$role_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="304">
+          <name>$perm_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="320" package="ACL\Models">
+        <name>del_role_perm</name>
+        <full_name>del_role_perm</full_name>
+        <docblock line="312">
+          <description>remove permission from role</description>
+          <long-description/>
+          <tag line="312" name="param" description="the unique identifier for the role" type="int" variable="$role_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="312" name="param" description="the unique identifier for the permission" type="int" variable="$perm_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="312" name="return" description="TRUE/FALSE - whether or not removal was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="312" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="320">
+          <name>$role_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="320">
+          <name>$perm_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="341" package="ACL\Models">
+        <name>get_all_perms</name>
+        <full_name>get_all_perms</full_name>
+        <docblock line="334">
+          <description>get all permissions</description>
+          <long-description/>
+          <tag line="334" name="return" description="an array of CodeIgniter row objects for permission" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="334" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="334" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="355" package="ACL\Models">
+        <name>get_perm_by</name>
+        <full_name>get_perm_by</full_name>
+        <docblock line="346">
+          <description>get permission by constraint</description>
+          <long-description/>
+          <tag line="346" name="param" description="the field to constrain" type="string" variable="$field">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="346" name="param" description="the value field should be" type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="346" name="return" description="an array of CodeIgniter row objects for permission" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="346" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="346" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="355">
+          <name>$field</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="355">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="368" package="ACL\Models">
+        <name>get_perm</name>
+        <full_name>get_perm</full_name>
+        <docblock line="360">
+          <description>get a specific permissions</description>
+          <long-description/>
+          <tag line="360" name="param" description="the unique identifier for the permission (id not value)" type="int" variable="$perm_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="360" name="return" description="a CodeIgniter row object for permission" type="object">
+            <type by_reference="false">object</type>
+          </tag>
+          <tag line="360" name="see" description="Documentation for CodeIgniter row object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
+          <tag line="360" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="368">
+          <name>$perm_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="380" package="ACL\Models">
+        <name>add_perm</name>
+        <full_name>add_perm</full_name>
+        <docblock line="373">
+          <description>add a permission</description>
+          <long-description/>
+          <tag line="373" name="param" description="the new permissions data" type="\assoc_array" variable="$data">
+            <type by_reference="false">\assoc_array</type>
+          </tag>
+          <tag line="373" name="return" description="TRUE/FALSE - whether addition was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="373" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="380">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="392" package="ACL\Models">
+        <name>del_perm</name>
+        <full_name>del_perm</full_name>
+        <docblock line="385">
+          <description>delete a permission</description>
+          <long-description/>
+          <tag line="385" name="param" description="the unique identifier for the permission (id not value)" type="int" variable="$perm_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="385" name="return" description="TRUE/FALSE - whether addition was successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="385" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="392">
+          <name>$perm_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="405" package="ACL\Models">
+        <name>edit_perm</name>
+        <full_name>edit_perm</full_name>
+        <docblock line="397">
+          <description>update a permission</description>
+          <long-description/>
+          <tag line="397" name="param" description="the unique identifier for the permission (id not value)" type="int" variable="$perm_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="397" name="param" description="the new data for permission" type="\assoc_array" variable="$data">
+            <type by_reference="false">\assoc_array</type>
+          </tag>
+          <tag line="397" name="return" description="TRUE/FALSE - whether or not update successful" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="397" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="405">
+          <name>$perm_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="405">
+          <name>$data</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="425" package="ACL\Models">
+        <name>get_user_perm</name>
+        <full_name>get_user_perm</full_name>
+        <docblock line="416">
+          <description>get a users permission value (total)</description>
+          <long-description/>
+          <tag line="416" name="param" description="the unique identifier for the user" type="int" variable="$user_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="416" name="return" description="the permission values the user has added together (0 if no permissions)" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="416" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+          <tag line="416" name="todo" description="refactor code to use complex sql **instead** of rest of model, and multiple sql calls."/>
+        </docblock>
+        <argument line="425">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file models/acl_model.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/welcome_message.php" hash="f3d36dd7965e4774ae4494c4dfe564f6" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/welcome_message.php</error>
+    </parse_markers>
+  </file>
+  <package name="ACL" full_name="ACL">
+    <package name="Models" full_name="ACL\Models"/>
+  </package>
+  <package name="Default" full_name="Default"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="3">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

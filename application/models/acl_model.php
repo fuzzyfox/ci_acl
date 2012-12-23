@@ -6,7 +6,7 @@
  * Yet another ACL implementation for CodeIgniter. More specifically this is 
  * a role-based access control list for CodeIgniter.
  * 
- * @package		CI_ACL
+ * @package		ACL
  * @author		William Duyck <fuzzyfox0@gmail.com>
  * @copyright	Copyright (c) 2012, William Duyck
  * @license		http://www.mozilla.org/MPL/2.0/ Mozilla Public License 2.0
@@ -16,15 +16,14 @@
 // ------------------------------------------------------------------------
 
 /**
- * Staff Model
+ * ACL Model
  * 
  * Provides a set of simple functions for interacting with data relating to 
- * staff (social workers, senior social workers, administrators).
+ * user roles and permissions
  * 
- * @package		CI_ACL
+ * @package		ACL
  * @subpackage	Models
  * @author		William Duyck <wemd2@kent.ac.uk>
- * @category	ACL
  *
  * @todo	test logic, not just sytax
  */
