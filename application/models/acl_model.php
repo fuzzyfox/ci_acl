@@ -214,6 +214,52 @@ class ACL_model extends CI_model {
 		return ($this->db->affected_rows() == 1);
 	}
 	
+	/*
+	| -------------------------------------------------------------------
+	|  user permission relation
+	| -------------------------------------------------------------------
+	*/
+	
+	/**
+	 * get a users permission value (total)
+	 *
+	 * @param	int	$user_id	the unique identifier for the user
+	 * @return	int	the permission values the user has added together (0 if no permissions)
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function get_user_perm($user_id) {
+		// hold on tight... this is a complicated one... and will be 
+		// rolled into a single sql query if possible at a later date. (might be possible)
+		$rtn = 0;
+		
+		// get users roles
+		$roles = $this->get_user_role($user_id);
+		
+		// check role(s) set
+		if($roles === FALSE) {
+			return $rtn;
+		}
+		
+		// for each role get its perms and add them up
+		foreach($roles as $role) {
+			// get role perms
+			$perms = $this->get_role_perms($role->role_id);
+			
+			// check perms assigned to role
+			if($perms === FALSE) {
+				return $rtn;
+			}
+			
+			// loop through role perms doing maths
+			foreach($perms as $perm) {
+				$rtn += $perm->value;
+			}
+		}
+		
+		// return permission value total and return
+		return $rtn;
+	}
+	
 }
 
 /* End of file acl_model.php */
