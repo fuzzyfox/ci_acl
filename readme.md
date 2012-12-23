@@ -76,3 +76,17 @@ The schema for these tables as defined above can be found in `acl_schema.sql`, t
 
 ## License
 All code in this project is subject to the terms of the [Mozilla Public License, v. 2.0](http://mozilla.org/MPL/2.0/) except where otherwise noted.
+
+## ChangeLog
+### 2012.12.23
+First major changeset. Released as version **0.1**.
+
+* added core files
+* added high level documentation
+* added basic logic needed for model functionality
+
+Next version:
+
+* start work on the acl library methods
+* create basic UI to manage role + permissions
+* porject name change
