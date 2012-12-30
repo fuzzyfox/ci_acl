@@ -125,7 +125,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file config/profiler.php</error>
     </parse_markers>
   </file>
-  <file path="config/routes.php" hash="72b0e5fc815e700fdbcd6161280968bb" package="Default">
+  <file path="config/routes.php" hash="cd320ff35ef06accbb34a1161e57a02c" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file config/routes.php</error>
     </parse_markers>
@@ -140,13 +140,35 @@
       <error line="0" code="50007">No page-level DocBlock was found in file config/user_agents.php</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/perm.php" hash="8048f213dd0dcda7432298f66bd3adcd" package="Default">
+  <file path="controllers/acl/acl.php" hash="a90ae2a0e87254c84abc5772f233622b" package="Default">
+    <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
+      <extends>\CI_controller</extends>
+      <name>ACL</name>
+      <full_name>\ACL</full_name>
+      <docblock line="18">
+        <description>ACL Controller (Root)</description>
+        <long-description>&lt;p&gt;Provides a set functions to navigate the acl maintainance system&lt;/p&gt;</long-description>
+        <tag line="18" name="package" description="ACL"/>
+        <tag line="18" name="subpackage" description="Controllers"/>
+        <tag line="18" name="author" description="William Duyck &lt;wemd2@kent.ac.uk&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="ACL\Controllers">
+        <name>index</name>
+        <full_name>index</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/acl/acl.php</error>
+      <error line="29" code="50010">No DocBlock was found for method index()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/acl/perm.php" hash="9eb2f56b170b83b37f45280578838f98" package="Default">
     <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>Perm</name>
       <full_name>\Perm</full_name>
       <docblock line="18">
-        <description>ACL Controller (Role)</description>
+        <description>ACL Controller (Perm)</description>
         <long-description>&lt;p&gt;Provides a set functions to maintain user roles within the system&lt;/p&gt;</long-description>
         <tag line="18" name="package" description="ACL"/>
         <tag line="18" name="subpackage" description="Controllers"/>
@@ -187,7 +209,7 @@
       <error line="41" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/role.php" hash="ba6b32575d2e4e2f8dedae3163797e5b" package="Default">
+  <file path="controllers/acl/role.php" hash="9af430fc4c9d84814e8b5a103bc084cd" package="Default">
     <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>Role</name>
@@ -234,13 +256,13 @@
       <error line="41" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/user.php" hash="fb82680bcf8179a89179493e432674b7" package="Default">
+  <file path="controllers/acl/user.php" hash="924008775847972c00d067eb26c1e4da" package="Default">
     <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>User</name>
       <full_name>\User</full_name>
       <docblock line="18">
-        <description>ACL Controller (Role)</description>
+        <description>ACL Controller (User)</description>
         <long-description>&lt;p&gt;Provides a set functions to maintain user roles within the system&lt;/p&gt;</long-description>
         <tag line="18" name="package" description="ACL"/>
         <tag line="18" name="subpackage" description="Controllers"/>
@@ -283,6 +305,76 @@ map to /index.php/welcome/&lt;method_name&gt;&lt;/p&gt;</long-description>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/welcome.php</error>
       <error line="3" code="50000">No DocBlock was found for \Welcome</error>
+    </parse_markers>
+  </file>
+  <file path="core/MY_Loader.php" hash="93ea444399cafb08c931f5ec0c50bb56" package="Default">
+    <class final="false" abstract="false" namespace="global" line="31" package="ACL\Core">
+      <extends>\CI_Loader</extends>
+      <name>MY_Loader</name>
+      <full_name>\MY_Loader</full_name>
+      <docblock line="18">
+        <description>Loader Class (extended)</description>
+        <long-description>&lt;p&gt;Loads views and files, with the extended ability to load themed views,
+and test cases. Based on previous work by William Duyck.&lt;/p&gt;</long-description>
+        <tag line="18" name="package" description="ACL"/>
+        <tag line="18" name="subpackage" description="Core"/>
+        <tag line="18" name="author" description="William Duyck &lt;wduyck@kent.ac.uk&gt;"/>
+        <tag line="18" name="category" description="Loader"/>
+        <tag line="18" name="copyright" description="Copyright (c) 2012, William Duyck"/>
+        <tag line="18" name="license" description="http://www.mozilla.org/MPL/2.0/ Mozilla Public License 2.0"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="51" package="ACL\Core">
+        <name>view</name>
+        <full_name>view</full_name>
+        <docblock line="33">
+          <description>Load View</description>
+          <long-description>&lt;p&gt;This modified function is used to load a "view" file. It has four parameters:&lt;/p&gt;
+
+&lt;p&gt;Usage:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// w/o theme
+$this-&amp;gt;load-&amp;gt;view('my_view');
+
+// w/ theme
+$this-&amp;gt;load-&amp;gt;view('my_view', NULL, FALSE, 'my_template');
+&lt;/code&gt;&lt;/pre&gt;</long-description>
+          <tag line="33" name="param" description="The name of the &quot;view&quot; file to be included." type="string" variable="$view">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="33" name="param" description="An associative array of data to be extracted for use in the view." type="\assoc_array" variable="$vars">
+            <type by_reference="false">\assoc_array</type>
+          </tag>
+          <tag line="33" name="param" description="TRUE/FALSE - whether to return data or load it." type="boolean" variable="$return">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="33" name="param" description="TRUE/FALSE - whether to load data within a &quot;theme&quot;." type="boolean" variable="$theme">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="51">
+          <name>$view</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="51">
+          <name>$vars</name>
+          <default>array()</default>
+          <type/>
+        </argument>
+        <argument line="51">
+          <name>$return</name>
+          <default>FALSE</default>
+          <type/>
+        </argument>
+        <argument line="51">
+          <name>$theme</name>
+          <default>FALSE</default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file core/MY_Loader.php</error>
     </parse_markers>
   </file>
   <file path="errors/error_404.php" hash="be0acb0a9578bf326c8619b3054d2729" package="Default">
@@ -977,6 +1069,7 @@ user roles and permissions&lt;/p&gt;</long-description>
   </file>
   <package name="ACL" full_name="ACL">
     <package name="Controllers" full_name="ACL\Controllers"/>
+    <package name="Core" full_name="ACL\Core"/>
     <package name="Models" full_name="ACL\Models"/>
   </package>
   <package name="Default" full_name="Default"/>

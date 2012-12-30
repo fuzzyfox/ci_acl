@@ -10,7 +10,7 @@
  * @author		William Duyck <fuzzyfox0@gmail.com>
  * @copyright	Copyright (c) 2012, William Duyck
  * @license		http://www.mozilla.org/MPL/2.0/ Mozilla Public License 2.0
- * @since		2012.12.23
+ * @since		2012.12.30
  */
 
 // ------------------------------------------------------------------------
