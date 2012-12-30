@@ -5,7 +5,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file config/acl.php</error>
     </parse_markers>
   </file>
-  <file path="config/autoload.php" hash="b55e5ac9d096c35c6421602308ff8c12" package="Default">
+  <file path="config/autoload.php" hash="4b8ed66cc198cccacc3cae954782faf6" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file config/autoload.php</error>
     </parse_markers>
@@ -140,7 +140,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file config/user_agents.php</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/acl.php" hash="a90ae2a0e87254c84abc5772f233622b" package="Default">
+  <file path="controllers/acl/acl.php" hash="35ed6bc9c061e36c131d711705eb4453" package="Default">
     <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>ACL</name>
@@ -162,7 +162,7 @@
       <error line="29" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/perm.php" hash="9eb2f56b170b83b37f45280578838f98" package="Default">
+  <file path="controllers/acl/perm.php" hash="523d7b5613be7b23f8f139ec7a2edb41" package="Default">
     <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>Perm</name>
@@ -209,7 +209,7 @@
       <error line="41" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/role.php" hash="9af430fc4c9d84814e8b5a103bc084cd" package="Default">
+  <file path="controllers/acl/role.php" hash="d3c4aa100fa2cf9190be95e91adc1918" package="Default">
     <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>Role</name>
@@ -256,7 +256,7 @@
       <error line="41" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/user.php" hash="924008775847972c00d067eb26c1e4da" package="Default">
+  <file path="controllers/acl/user.php" hash="d20629ccf490cbf4c03cf46d9932a1a3" package="Default">
     <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>User</name>
@@ -272,10 +272,15 @@
         <name>index</name>
         <full_name>index</full_name>
       </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="35" package="ACL\Controllers">
+        <name>add</name>
+        <full_name>add</full_name>
+      </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/acl/user.php</error>
       <error line="29" code="50010">No DocBlock was found for method index()</error>
+      <error line="35" code="50010">No DocBlock was found for method add()</error>
     </parse_markers>
   </file>
   <file path="controllers/welcome.php" hash="cc854a830832815cc276e59a7b92058a" package="Default">
@@ -397,7 +402,7 @@ $this-&amp;gt;load-&amp;gt;view('my_view', NULL, FALSE, 'my_template');
       <error line="0" code="50007">No page-level DocBlock was found in file errors/error_php.php</error>
     </parse_markers>
   </file>
-  <file path="models/acl_model.php" hash="84f11c30274f8d0d19c76c970af1a6b4" package="Default">
+  <file path="models/acl_model.php" hash="fb062cc44d3e90482ec1476453f5a0ba" package="Default">
     <class final="false" abstract="false" namespace="global" line="30" package="ACL\Models">
       <extends>\CI_model</extends>
       <name>ACL_model</name>
@@ -1060,6 +1065,56 @@ user roles and permissions&lt;/p&gt;</long-description>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file models/acl_model.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/acl/form/add_perm.php" hash="3c905a5fac7448e10095c4e56bea0470" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/acl/form/add_perm.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/acl/form/add_role.php" hash="3c43525c81bef7f85af8e85319ed09d6" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/acl/form/add_role.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/acl/form/add_user.php" hash="6429b943d97ec601f6f7708810b7ff42" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/acl/form/add_user.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/acl/index.php" hash="87f4d34e4fecd415e243b73dbe29aabb" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/acl/index.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/acl/perm.php" hash="c88f56840ec9ce0152c9251040e136ef" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/acl/perm.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/acl/role.php" hash="aa31fb323e2df04cacbb9c1c43760ee3" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/acl/role.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/acl/user.php" hash="03fcef96da354fdc88e861472c8d2391" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/acl/user.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/theme/bootstrap-journal/footer.php" hash="df4ea1182c0151ed6601540c0d31e53e" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/theme/bootstrap-journal/footer.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/theme/bootstrap-journal/header.php" hash="ac09332b187c9840bb1b74a91d33414a" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/theme/bootstrap-journal/header.php</error>
+    </parse_markers>
+  </file>
+  <file path="views/theme/bootstrap-journal.php" hash="25f582e96bd1311a0a3e8e32f3f41c1b" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/theme/bootstrap-journal.php</error>
     </parse_markers>
   </file>
   <file path="views/welcome_message.php" hash="f3d36dd7965e4774ae4494c4dfe564f6" package="Default">
