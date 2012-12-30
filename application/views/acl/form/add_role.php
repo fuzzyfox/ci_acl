@@ -23,12 +23,12 @@
 		<div class="control-group">
 			<label for="description" class="control-label">Description</label>
 			<div class="controls">
-				<textarea name="description" max-length="140" class="input-xlarge" rows="3" required></textarea>
+				<textarea name="description" max-length="140" class="input-large" rows="3" required></textarea>
 			</div>
 		</div>
 	
 		<div class="form-actions">
-			<button type="submit" class="btn btn-primary">save</button>
+			<button type="submit" class="btn btn-primary">Save</button>
 			<button class="btn">Cancel</button>
 		</div>
 	</fieldset>

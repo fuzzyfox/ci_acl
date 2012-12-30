@@ -32,7 +32,7 @@
 		</div>
 	
 		<div class="form-actions">
-			<button type="submit" class="btn btn-primary">save</button>
+			<button type="submit" class="btn btn-primary">Save</button>
 			<button class="btn">Cancel</button>
 		</div>
 	</fieldset>
