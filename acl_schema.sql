@@ -13,7 +13,8 @@ CREATE TABLE IF NOT EXISTS `role` (
 	slug		varchar(35)		NOT NULL, -- the system name for the role (set by the system on role creation)
 	description	TEXT		NOT NULL, -- what this role is for, and allows (high level not details)
 	PRIMARY KEY (`role_id`),
-	UNIQUE (`name`)
+	UNIQUE (`name`),
+	UNIQUE (`slug`)
 );
 
 CREATE TABLE IF NOT EXISTS `user_role` (

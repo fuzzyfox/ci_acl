@@ -27,7 +27,7 @@
 class Perm extends CI_controller {
 	
 	public function add() {
-		echo 'add';
+		$this->load->view('acl/form/add_perm', NULL, FALSE, 'bootstrap-journal');
 	}
 	
 	public function edit($id) {
@@ -39,7 +39,9 @@ class Perm extends CI_controller {
 	}
 	
 	public function index() {
-		echo 'list';
+		$data['perm_list'] = $this->acl_model->get_all_perms();
+		
+		$this->load->view('acl/perm', $data, FALSE, 'bootstrap-journal');
 	}
 }
 

@@ -27,7 +27,7 @@
 class ACL extends CI_controller {
 	
 	public function index() {
-		echo 'dashboard';
+		$this->load->view('acl/index', NULL, FALSE, 'bootstrap-journal');
 	}
 }
 

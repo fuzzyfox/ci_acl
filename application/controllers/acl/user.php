@@ -27,7 +27,13 @@
 class User extends CI_controller {
 	
 	public function index() {
-		echo 'list';
+		$data['user_list'] = $this->acl_model->get_all_users();
+		
+		$this->load->view('acl/user', $data, FALSE, 'bootstrap-journal');
+	}
+	
+	public function add() {
+		$this->load->view('acl/form/add_user', NULL, FALSE, 'bootstrap-journal');
 	}
 }
 

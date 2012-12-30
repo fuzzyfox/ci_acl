@@ -61,7 +61,7 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function get_all_users() {
-		$users = $this->db->get($this->_config->table['users']);
+		$users = $this->db->get($this->_config->table['user']);
 		return ($users->num_rows() > 0) ? $users->result() : FALSE;
 	}
 	
