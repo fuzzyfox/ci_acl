@@ -16,7 +16,7 @@
 // ------------------------------------------------------------------------
 
 /**
- * ACL Controller (Role)
+ * ACL Controller (Perm)
  * 
  * Provides a set functions to maintain user roles within the system
  * 
@@ -43,5 +43,5 @@ class Perm extends CI_controller {
 	}
 }
 
-/* End of file role.php */
-/* Location: ./application/controllers/acl/role.php */
+/* End of file perm.php */
+/* Location: ./application/controllers/acl/perm.php */

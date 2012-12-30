@@ -16,20 +16,20 @@
 // ------------------------------------------------------------------------
 
 /**
- * ACL Controller (User)
+ * ACL Controller (Root)
  * 
- * Provides a set functions to maintain user roles within the system
+ * Provides a set functions to navigate the acl maintainance system
  * 
  * @package		ACL
  * @subpackage	Controllers
  * @author		William Duyck <wemd2@kent.ac.uk>
  */
-class User extends CI_controller {
+class ACL extends CI_controller {
 	
 	public function index() {
-		echo 'list';
+		echo 'dashboard';
 	}
 }
 
-/* End of file user.php */
-/* Location: ./application/controllers/acl/user.php */
+/* End of file acl.php */
+/* Location: ./application/controllers/acl/acl.php */
