@@ -1,4 +1,4 @@
-<form action="#" class="form-horizontal well">
+<?= form_open('acl/user/add', array('class' => 'form-horizontal well')); ?>
 	<fieldset>
 		<legend>Add User</legend>
 	
