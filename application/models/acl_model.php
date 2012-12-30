@@ -136,14 +136,14 @@ class ACL_model extends CI_model {
 	*/
 	
 	/**
-	 * get users role
+	 * get users roles
 	 *
-	 * @param	string	$user_id	the unique identifier for the user to get
-	 * @return	array	array of CodeIgniter row objects for user
+	 * @param	string	$user_id	the unique identifier for the user
+	 * @return	array	array of CodeIgniter row objects containing the user roles
 	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter result object
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
-	public function get_user_role($user_id) {
+	public function get_user_roles($user_id) {
 		$this->db->select($this->_config->table['role'] . '.*')
 			->from($this->_config->table['user_role'])
 			->where('user_id', $user_id)
@@ -348,7 +348,7 @@ class ACL_model extends CI_model {
 	 *
 	 * @param	string	$field	the field to constrain
 	 * @param	mixed	$value	the value field should be
-	 * @return	array	an array of CodeIgniter row objects for permission
+	 * @return	array	an array of CodeIgniter row objects for permissions
 	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter result object
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
@@ -414,18 +414,19 @@ class ACL_model extends CI_model {
 	*/
 	
 	/**
-	 * get a users permission value (total)
+	 * get a users permissions based off those in users roles
 	 *
-	 * @param	int	$user_id	the unique identifier for the user
-	 * @return	int	the permission values the user has added together (0 if no permissions)
+	 * @param	int		$user_id	the unique identifier for the user
+	 * @return	array	an array of CodeIgniter row objects for permissions
+	 * @see		http://ellislab.com/codeigniter/user-guide/database/results.html Documentation for CodeIgniter result object
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 *
 	 * @todo	refactor code to use complex sql **instead** of rest of model, and multiple sql calls.
 	 */
-	public function get_user_perm($user_id) {
+	public function get_user_perms($user_id) {
 		// hold on tight... this is a complicated one... and will be 
-		// rolled into a single sql query if possible at a later date. (might be possible)
-		$rtn = 0;
+		// rolled into a single sql query if possible at a later date w/ diff logic. (might be possible)
+		$rtn = array();
 		
 		// get users roles
 		$roles = $this->get_user_role($user_id);
@@ -435,7 +436,7 @@ class ACL_model extends CI_model {
 			return $rtn;
 		}
 		
-		// for each role get its perms and add them up
+		// for each role get its perms and add them to return array
 		foreach($roles as $role) {
 			// get role perms
 			$perms = $this->get_role_perms($role->role_id);
@@ -445,16 +446,55 @@ class ACL_model extends CI_model {
 				return $rtn;
 			}
 			
-			// loop through role perms doing maths
-			foreach($perms as $perm) {
-				$rtn += $perm->value;
-			}
+			array_push($rtn, $perms);
 		}
 		
 		// return permission value total and return
-		return $rtn;
+		return array_unique($rtn);
 	}
 	
+	/*
+	| -------------------------------------------------------------------
+	|  helper/utility methods for acl usage
+	| -------------------------------------------------------------------
+	*/
+	
+	/**
+	 * user permission check
+	 *
+	 * Checks a user has the required permission.
+	 *
+	 * @param	string	$user_id	the user to check permission on
+	 * @param	string	$slug		the permission required
+	 * @return	boolean	TRUE/FALSE - whether or not user has permission
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function user_has_perm($user_id, $slug) {
+		$perms = $this->get_user_perms($user_id);
+		
+		// loop through users permissions and check for the slug
+		foreach($perms as $perm) {
+			// if slug is found then return TRUE
+			if($perm->slug === $slug) {
+				return TRUE;
+			}
+		}
+		
+		// if we make it to here the user doesn't have permission
+		return FALSE;
+	}
+	
+	/**
+	 * user role check
+	 *
+	 * @param	int		$user_id	the unique identifier for the uer
+	 * @param	string	$slug		the role required
+	 * @return	boolean	TRUE/FALSE - whether or not the user has role
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 */
+	public function user_has_role($user_id, $slug) {
+		return ($this->get_user_roles($user_id) !== FALSE);
+	}
 }
 
 /* End of file acl_model.php */

@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">26</span></a></li>
+                <span class="label label-info">36</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">3</span>
@@ -83,8 +83,10 @@
 <li class="method public "><a href="#method_get_role_perms" title="get_role_perms :: get permission a role has"><span class="description">get permission a role has</span><pre>get_role_perms()</pre></a></li>
 <li class="method public "><a href="#method_get_user" title="get_user :: get user details"><span class="description">get user details</span><pre>get_user()</pre></a></li>
 <li class="method public "><a href="#method_get_user_by" title="get_user_by :: get specific user details by constraint"><span class="description">get specific user details by constraint</span><pre>get_user_by()</pre></a></li>
-<li class="method public "><a href="#method_get_user_perm" title="get_user_perm :: get a users permission value (total)"><span class="description">get a users permission value (total)</span><pre>get_user_perm()</pre></a></li>
-<li class="method public "><a href="#method_get_user_role" title="get_user_role :: get users role"><span class="description">get users role</span><pre>get_user_role()</pre></a></li>
+<li class="method public "><a href="#method_get_user_perms" title="get_user_perms :: get a users permissions based off those in users roles"><span class="description">get a users permissions based off those in users roles</span><pre>get_user_perms()</pre></a></li>
+<li class="method public "><a href="#method_get_user_roles" title="get_user_roles :: get users roles"><span class="description">get users roles</span><pre>get_user_roles()</pre></a></li>
+<li class="method public "><a href="#method_user_has_perm" title="user_has_perm :: user permission check"><span class="description">user permission check</span><pre>user_has_perm()</pre></a></li>
+<li class="method public "><a href="#method_user_has_role" title="user_has_role :: user role check"><span class="description">user role check</span><pre>user_has_role()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -528,7 +530,7 @@ user roles and permissions</p></div>
 <code>mixed</code><p>the value field should be</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>array</code>an array of CodeIgniter row objects for permission</div>
+<code>array</code>an array of CodeIgniter row objects for permissions</div>
 </div></div>
 </div>
 <a id="method_get_role"></a><div class="element clickable method public method_get_role" data-toggle="collapse" data-target=".method_get_role .collapse">
@@ -666,13 +668,17 @@ user roles and permissions</p></div>
 <code>array</code>an array of CodeIgniter row objects for user</div>
 </div></div>
 </div>
-<a id="method_get_user_perm"></a><div class="element clickable method public method_get_user_perm" data-toggle="collapse" data-target=".method_get_user_perm .collapse">
-<h2>get a users permission value (total)</h2>
-<pre>get_user_perm(int $user_id) : int</pre>
+<a id="method_get_user_perms"></a><div class="element clickable method public method_get_user_perms" data-toggle="collapse" data-target=".method_get_user_perms .collapse">
+<h2>get a users permissions based off those in users roles</h2>
+<pre>get_user_perms(int $user_id) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">Documentation for CodeIgniter result object</a></td>
+</tr>
 <tr>
 <th>author</th>
 <td><a href="mailto:fuzzyfox0@gmail.com">William Duyck</a></td>
@@ -688,12 +694,12 @@ user roles and permissions</p></div>
 <code>int</code><p>the unique identifier for the user</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>int</code>the permission values the user has added together (0 if no permissions)</div>
+<code>array</code>an array of CodeIgniter row objects for permissions</div>
 </div></div>
 </div>
-<a id="method_get_user_role"></a><div class="element clickable method public method_get_user_role" data-toggle="collapse" data-target=".method_get_user_role .collapse">
-<h2>get users role</h2>
-<pre>get_user_role(string $user_id) : array</pre>
+<a id="method_get_user_roles"></a><div class="element clickable method public method_get_user_roles" data-toggle="collapse" data-target=".method_get_user_roles .collapse">
+<h2>get users roles</h2>
+<pre>get_user_roles(string $user_id) : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -710,10 +716,54 @@ user roles and permissions</p></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$user_id</h4>
-<code>string</code><p>the unique identifier for the user to get</p></div>
+<code>string</code><p>the unique identifier for the user</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code>array</code>array of CodeIgniter row objects for user</div>
+<code>array</code>array of CodeIgniter row objects containing the user roles</div>
+</div></div>
+</div>
+<a id="method_user_has_perm"></a><div class="element clickable method public method_user_has_perm" data-toggle="collapse" data-target=".method_user_has_perm .collapse">
+<h2>user permission check</h2>
+<pre>user_has_perm(string $user_id, string $slug) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Checks a user has the required permission.</p></div>
+<table class="table table-bordered"><tr>
+<th>author</th>
+<td><a href="mailto:fuzzyfox0@gmail.com">William Duyck</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$user_id</h4>
+<code>string</code><p>the user to check permission on</p></div>
+<div class="subelement argument">
+<h4>$slug</h4>
+<code>string</code><p>the permission required</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>TRUE/FALSE - whether or not user has permission</div>
+</div></div>
+</div>
+<a id="method_user_has_role"></a><div class="element clickable method public method_user_has_role" data-toggle="collapse" data-target=".method_user_has_role .collapse">
+<h2>user role check</h2>
+<pre>user_has_role(int $user_id, string $slug) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>author</th>
+<td><a href="mailto:fuzzyfox0@gmail.com">William Duyck</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$user_id</h4>
+<code>int</code><p>the unique identifier for the uer</p></div>
+<div class="subelement argument">
+<h4>$slug</h4>
+<code>string</code><p>the role required</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>TRUE/FALSE - whether or not the user has role</div>
 </div></div>
 </div>
 <h3>
@@ -731,7 +781,7 @@ user roles and permissions</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a11</a> and<br>
-            generated on 2012-12-23T23:18:18Z.<br></footer></div>
+            generated on 2012-12-30T16:54:57Z.<br></footer></div>
 </div>
 </body>
 </html>

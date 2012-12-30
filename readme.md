@@ -33,7 +33,7 @@ This can also be described using some basic set theory:
 	ua ⊆ u × r
 	pa ⊆ p × r
 
-This implementation uses numerical values (2^n) for the permissions (don't worry the database schema still stores wordy versions of each permission), and bitwise operations to check that a user has the needed permissions to perform a given action.
+<del>This implementation uses numerical values (2^n) for the permissions (don't worry the database schema still stores wordy versions of each permission), and bitwise operations to check that a user has the needed permissions to perform a given action.</del> (not right now but may in the future)
 
 The system also does not account for users having permissions directly but instead forces a user to be assigned at least one role.
 
@@ -62,12 +62,13 @@ The table names can be changed within the `application/config/acl.php` file.
 	+--+role_id    |
 	|  +-----------+
 	|
-	|  +-----------+                           +-----------+
-	|  |role       |       +-----------+       |perm       |
-	|  |-----------|       |role_perm  |       |-----------|
-	+-->role_id    <---+   |-----------|   +--->perm_id    |
-	   |name       |   +---+role_id    |   |   |name       |
-	   |description|       |perm_id    +---+   |value      |
+	|  +-----------+
+	|  |role       |                           +-----------+
+	|  |-----------|       +-----------+       |perm       |
+	+-->role_id    <---+   |role_perm  |       |-----------|
+	   |name       |   |   |-----------|   +--->perm_id    |
+	   |description|   +---+role_id    |   |   |name       |
+	   |slug       |       |perm_id    +---+   |slug       |
 	   +-----------+       +-----------+       +-----------+
 
 The schema for these tables as defined above can be found in `acl_schema.sql`, this contains extra information such as field types, and primary keys. The schema provided, along with the example usage also come with a basic user login. This aids in testing, as well as sets a ground work for you to build on in your own CodeIgniter applications. 

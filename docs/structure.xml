@@ -5,7 +5,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file config/acl.php</error>
     </parse_markers>
   </file>
-  <file path="config/autoload.php" hash="eb039dca80217677aebd7290e5d5f9e2" package="Default">
+  <file path="config/autoload.php" hash="b55e5ac9d096c35c6421602308ff8c12" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file config/autoload.php</error>
     </parse_markers>
@@ -140,6 +140,122 @@
       <error line="0" code="50007">No page-level DocBlock was found in file config/user_agents.php</error>
     </parse_markers>
   </file>
+  <file path="controllers/acl/perm.php" hash="8048f213dd0dcda7432298f66bd3adcd" package="Default">
+    <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
+      <extends>\CI_controller</extends>
+      <name>Perm</name>
+      <full_name>\Perm</full_name>
+      <docblock line="18">
+        <description>ACL Controller (Role)</description>
+        <long-description>&lt;p&gt;Provides a set functions to maintain user roles within the system&lt;/p&gt;</long-description>
+        <tag line="18" name="package" description="ACL"/>
+        <tag line="18" name="subpackage" description="Controllers"/>
+        <tag line="18" name="author" description="William Duyck &lt;wemd2@kent.ac.uk&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="ACL\Controllers">
+        <name>add</name>
+        <full_name>add</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="ACL\Controllers">
+        <name>edit</name>
+        <full_name>edit</full_name>
+        <argument line="33">
+          <name>$id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="37" package="ACL\Controllers">
+        <name>del</name>
+        <full_name>del</full_name>
+        <argument line="37">
+          <name>$id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="ACL\Controllers">
+        <name>index</name>
+        <full_name>index</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/acl/perm.php</error>
+      <error line="29" code="50010">No DocBlock was found for method add()</error>
+      <error line="33" code="50010">No DocBlock was found for method edit()</error>
+      <error line="37" code="50010">No DocBlock was found for method del()</error>
+      <error line="41" code="50010">No DocBlock was found for method index()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/acl/role.php" hash="ba6b32575d2e4e2f8dedae3163797e5b" package="Default">
+    <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
+      <extends>\CI_controller</extends>
+      <name>Role</name>
+      <full_name>\Role</full_name>
+      <docblock line="18">
+        <description>ACL Controller (Role)</description>
+        <long-description>&lt;p&gt;Provides a set functions to maintain user roles within the system&lt;/p&gt;</long-description>
+        <tag line="18" name="package" description="ACL"/>
+        <tag line="18" name="subpackage" description="Controllers"/>
+        <tag line="18" name="author" description="William Duyck &lt;wemd2@kent.ac.uk&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="ACL\Controllers">
+        <name>add</name>
+        <full_name>add</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="ACL\Controllers">
+        <name>edit</name>
+        <full_name>edit</full_name>
+        <argument line="33">
+          <name>$id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="37" package="ACL\Controllers">
+        <name>del</name>
+        <full_name>del</full_name>
+        <argument line="37">
+          <name>$id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="41" package="ACL\Controllers">
+        <name>index</name>
+        <full_name>index</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/acl/role.php</error>
+      <error line="29" code="50010">No DocBlock was found for method add()</error>
+      <error line="33" code="50010">No DocBlock was found for method edit()</error>
+      <error line="37" code="50010">No DocBlock was found for method del()</error>
+      <error line="41" code="50010">No DocBlock was found for method index()</error>
+    </parse_markers>
+  </file>
+  <file path="controllers/acl/user.php" hash="fb82680bcf8179a89179493e432674b7" package="Default">
+    <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
+      <extends>\CI_controller</extends>
+      <name>User</name>
+      <full_name>\User</full_name>
+      <docblock line="18">
+        <description>ACL Controller (Role)</description>
+        <long-description>&lt;p&gt;Provides a set functions to maintain user roles within the system&lt;/p&gt;</long-description>
+        <tag line="18" name="package" description="ACL"/>
+        <tag line="18" name="subpackage" description="Controllers"/>
+        <tag line="18" name="author" description="William Duyck &lt;wemd2@kent.ac.uk&gt;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="ACL\Controllers">
+        <name>index</name>
+        <full_name>index</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file controllers/acl/user.php</error>
+      <error line="29" code="50010">No DocBlock was found for method index()</error>
+    </parse_markers>
+  </file>
   <file path="controllers/welcome.php" hash="cc854a830832815cc276e59a7b92058a" package="Default">
     <class final="false" abstract="false" namespace="global" line="3" package="Default">
       <extends>\CI_Controller</extends>
@@ -189,49 +305,7 @@ map to /index.php/welcome/&lt;method_name&gt;&lt;/p&gt;</long-description>
       <error line="0" code="50007">No page-level DocBlock was found in file errors/error_php.php</error>
     </parse_markers>
   </file>
-  <file path="libraries/acl.php" hash="2159ae4b44654e9f068ed7a618eb3aee" package="Default">
-    <class final="false" abstract="false" namespace="global" line="3" package="Default">
-      <extends/>
-      <name>ACL</name>
-      <full_name>\ACL</full_name>
-      <property final="false" static="false" visibility="private" line="10" namespace="global" package="Default">
-        <name>$_ci</name>
-        <default/>
-        <docblock line="5">
-          <description>CodeIgniter instance</description>
-          <long-description/>
-          <tag line="5" name="var" description="" type="\CodeIgniter">
-            <type by_reference="false">\CodeIgniter</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="false" visibility="public" line="16" namespace="global" package="Default">
-        <name>$model</name>
-        <default/>
-        <docblock line="11">
-          <description>acl model</description>
-          <long-description/>
-          <tag line="11" name="var" description="" type="\ACL_model">
-            <type by_reference="false">\ACL_model</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="Default">
-        <name>__construct</name>
-        <full_name>__construct</full_name>
-        <docblock line="18">
-          <description>constructor</description>
-          <long-description/>
-          <tag line="18" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
-        </docblock>
-      </method>
-    </class>
-    <parse_markers>
-      <error line="0" code="50007">No page-level DocBlock was found in file libraries/acl.php</error>
-      <error line="3" code="50000">No DocBlock was found for \ACL</error>
-    </parse_markers>
-  </file>
-  <file path="models/acl_model.php" hash="415a8b61ae6a405782d52cbdf9ee1fba" package="Default">
+  <file path="models/acl_model.php" hash="84f11c30274f8d0d19c76c970af1a6b4" package="Default">
     <class final="false" abstract="false" namespace="global" line="30" package="ACL\Models">
       <extends>\CI_model</extends>
       <name>ACL_model</name>
@@ -397,15 +471,15 @@ user roles and permissions&lt;/p&gt;</long-description>
         </argument>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="146" package="ACL\Models">
-        <name>get_user_role</name>
-        <full_name>get_user_role</full_name>
+        <name>get_user_roles</name>
+        <full_name>get_user_roles</full_name>
         <docblock line="138">
-          <description>get users role</description>
+          <description>get users roles</description>
           <long-description/>
-          <tag line="138" name="param" description="the unique identifier for the user to get" type="string" variable="$user_id">
+          <tag line="138" name="param" description="the unique identifier for the user" type="string" variable="$user_id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="138" name="return" description="array of CodeIgniter row objects for user" type="array">
+          <tag line="138" name="return" description="array of CodeIgniter row objects containing the user roles" type="array">
             <type by_reference="false">array</type>
           </tag>
           <tag line="138" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
@@ -707,7 +781,7 @@ user roles and permissions&lt;/p&gt;</long-description>
           <tag line="346" name="param" description="the value field should be" type="mixed" variable="$value">
             <type by_reference="false">mixed</type>
           </tag>
-          <tag line="346" name="return" description="an array of CodeIgniter row objects for permission" type="array">
+          <tag line="346" name="return" description="an array of CodeIgniter row objects for permissions" type="array">
             <type by_reference="false">array</type>
           </tag>
           <tag line="346" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
@@ -813,23 +887,80 @@ user roles and permissions&lt;/p&gt;</long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="425" package="ACL\Models">
-        <name>get_user_perm</name>
-        <full_name>get_user_perm</full_name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="426" package="ACL\Models">
+        <name>get_user_perms</name>
+        <full_name>get_user_perms</full_name>
         <docblock line="416">
-          <description>get a users permission value (total)</description>
+          <description>get a users permissions based off those in users roles</description>
           <long-description/>
           <tag line="416" name="param" description="the unique identifier for the user" type="int" variable="$user_id">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="416" name="return" description="the permission values the user has added together (0 if no permissions)" type="int">
-            <type by_reference="false">int</type>
+          <tag line="416" name="return" description="an array of CodeIgniter row objects for permissions" type="array">
+            <type by_reference="false">array</type>
           </tag>
+          <tag line="416" name="see" description="Documentation for CodeIgniter result object" refers="\global\http://ellislab.com/codeigniter/user-guide/database/results.html"/>
           <tag line="416" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
           <tag line="416" name="todo" description="refactor code to use complex sql **instead** of rest of model, and multiple sql calls."/>
         </docblock>
-        <argument line="425">
+        <argument line="426">
           <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="472" package="ACL\Models">
+        <name>user_has_perm</name>
+        <full_name>user_has_perm</full_name>
+        <docblock line="462">
+          <description>user permission check</description>
+          <long-description>&lt;p&gt;Checks a user has the required permission.&lt;/p&gt;</long-description>
+          <tag line="462" name="param" description="the user to check permission on" type="string" variable="$user_id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="462" name="param" description="the permission required" type="string" variable="$slug">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="462" name="return" description="TRUE/FALSE - whether or not user has permission" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="462" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="472">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="472">
+          <name>$slug</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="495" package="ACL\Models">
+        <name>user_has_role</name>
+        <full_name>user_has_role</full_name>
+        <docblock line="487">
+          <description>user role check</description>
+          <long-description/>
+          <tag line="487" name="param" description="the unique identifier for the uer" type="int" variable="$user_id">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="487" name="param" description="the role required" type="string" variable="$slug">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="487" name="return" description="TRUE/FALSE - whether or not the user has role" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="487" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+        </docblock>
+        <argument line="495">
+          <name>$user_id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="495">
+          <name>$slug</name>
           <default/>
           <type/>
         </argument>
@@ -845,6 +976,7 @@ user roles and permissions&lt;/p&gt;</long-description>
     </parse_markers>
   </file>
   <package name="ACL" full_name="ACL">
+    <package name="Controllers" full_name="ACL\Controllers"/>
     <package name="Models" full_name="ACL\Models"/>
   </package>
   <package name="Default" full_name="Default"/>
