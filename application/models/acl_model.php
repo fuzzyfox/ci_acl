@@ -287,7 +287,7 @@ class ACL_model extends CI_model {
 		$this->db->select($this->_config->table['perm'] . '.*')
 		->from($this->_config->table['role_perm'])
 		->where('role_id', $role_id)
-		->join($this->_config->table['perm'], $this->_config->table['perm'] . '.role_id = ' . $this->_config->table['role_perm'] . '.role_id');
+		->join($this->_config->table['perm'], $this->_config->table['perm'] . '.perm_id = ' . $this->_config->table['role_perm'] . '.perm_id');
 		
 		$perms = $this->db->get();
 		return ($perms->num_rows() > 0) ? $perms->result() : FALSE;

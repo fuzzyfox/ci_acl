@@ -23,6 +23,7 @@
 					<th>slug</th>
 					<th>name</th>
 					<th>description</th>
+					<th>permissions</th>
 					<th>action</th>
 				</tr>
 			</thead>
@@ -33,13 +34,13 @@
 					<td><?= $role->name; ?></td>
 					<td><?= $role->description; ?></td>
 					<td>
-						<? foreach($user->perms as $perm): ?>
+						<? if(is_array($role->perms)) foreach($role->perms as $perm): ?>
 						<?= $perm->name; ?>
 						<? endforeach; ?>
 					</td>
 					<td>
 						<?= anchor('acl/role/edit', '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
-						<?= anchor('acl/role/del/' . $role->role_id, '<i class="icon-remove"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
+						<?= anchor('acl/role/del/' . $role->role_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
 					</td>
 				</tr>
 				<? endforeach; ?>

@@ -35,14 +35,14 @@
 					<td><?= $user->email; ?></td>
 					<td>
 						<ul>
-							<? foreach($user->roles as $role): ?>
+							<? if(is_array($user->roles)) foreach($user->roles as $role): ?>
 							<li><?= $role->name; ?></li>
 							<? endforeach; ?>
 						</ul>
 					</td>
 					<td>
 						<?= anchor('acl/user/edit', '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
-						<?= anchor('acl/user/del/' . $user->user_id, '<i class="icon-remove"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
+						<?= anchor('acl/user/del/' . $user->user_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
 					</td>
 				</tr>
 				<? endforeach; ?>

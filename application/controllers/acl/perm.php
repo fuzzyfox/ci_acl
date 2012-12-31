@@ -26,16 +26,76 @@
  */
 class Perm extends CI_controller {
 	
-	public function add() {
-		$this->load->view('acl/form/add_perm', NULL, FALSE, 'bootstrap-journal');
+	private $acl_table;
+	
+	public function __construct() {
+		parent::__construct();
+		
+		$this->load->library('form_validation');
+		$this->load->helper(array('form', 'url'));
+		
+		$this->acl_table = (object)$this->config->item('acl');
+		$this->acl_table =& $this->acl_table->table;
 	}
 	
+	public function add() {
+		$this->form_validation->set_rules('name',			'Name',			'trim|required|max_length[70]|unique['.$this->acl_table['role'].'.name]');
+		$this->form_validation->set_rules('slug',			'Slug',			'trim|strtolower|required|max_length[35]|unique['.$this->acl_table['role'].'.slug]');
+		$this->form_validation->set_rules('description',	'Description',	'trim');
+		
+		if($this->form_validation->run() == FALSE) {
+			$this->load->view('acl/form/add_perm.php', NULL, FALSE, 'bootstrap-journal');
+		}
+		else {
+			$data = array(
+				'name'			=> $this->input->post('name'),
+				'slug'			=> $this->input->post('slug'),
+				'description'	=> $this->input->post('description')
+			);
+			
+			if($this->acl_model->add_perm($data)) {
+				redirect('acl/perm');
+			}
+			else {
+				show_error('Failed to add role');
+			}
+		}
+	}
+	
+	
 	public function edit($id) {
-		echo 'edit';
+		$this->form_validation->set_rules('name',			'Name',			'trim|required|max_length[70]|unique['.$this->acl_table['role'].'.name]');
+		$this->form_validation->set_rules('slug',			'Slug',			'trim|strtolower|required|max_length[35]|unique['.$this->acl_table['role'].'.slug]');
+		$this->form_validation->set_rules('description',	'Description',	'trim');
+		
+		if($this->form_validation->run() == FALSE) {
+			$data['perm'] = $this->acl_model->get_perm($id);
+			
+			$this->load->view('acl/form/edit_perm.php', $data, FALSE, 'bootstrap-journal');
+		}
+		else {
+			$data = array(
+				'name'			=> $this->input->post('name'),
+				'slug'			=> $this->input->post('slug'),
+				'description'	=> $this->input->post('description')
+			);
+			
+			if($this->acl_model->edit_perm($data)) {
+				redirect('acl/perm');
+			}
+			else {
+				show_error('Failed to add role');
+			}
+		}
 	}
 	
 	public function del($id) {
-		echo 'delete';
+		if($this->acl_model->del_perm($id)) {
+			redirect('acl/perm');
+		}
+		else {
+			show_error('Unable to delete permission');
+		}
 	}
 	
 	public function index() {
