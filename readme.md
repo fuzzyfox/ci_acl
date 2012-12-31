@@ -62,12 +62,12 @@ The table names can be changed within the `application/config/acl.php` file.
 	+--+role_id    |
 	|  +-----------+
 	|
-	|  +-----------+
-	|  |role       |                           +-----------+
-	|  |-----------|       +-----------+       |perm       |
-	+-->role_id    <---+   |role_perm  |       |-----------|
-	   |name       |   |   |-----------|   +--->perm_id    |
-	   |description|   +---+role_id    |   |   |name       |
+	|  +-----------+                           +-----------+
+	|  |role       |                           |perm       |
+	|  |-----------|       +-----------+       |-----------|
+	+-->role_id    <---+   |role_perm  |   +--->perm_id    |
+	   |name       |   |   |-----------|   |   |name       |
+	   |description|   +---+role_id    |   |   |description|
 	   |slug       |       |perm_id    +---+   |slug       |
 	   +-----------+       +-----------+       +-----------+
 
@@ -79,6 +79,18 @@ The schema for these tables as defined above can be found in `acl_schema.sql`, t
 All code in this project is subject to the terms of the [Mozilla Public License, v. 2.0](http://mozilla.org/MPL/2.0/) except where otherwise noted.
 
 ## ChangeLog
+### 2012.12.30
+Model refined, and tweaked slightly. User interface started. Released as version **0.2**
+
+* added basic UI to manage ACL
+* tweaked model to use slugs instead of numerical values
+* removed the acl library due to it no longer being needed
+
+Next version
+* project name change
+* complete UI
+* basic installer
+
 ### 2012.12.23
 First major changeset. Released as version **0.1**.
 
@@ -88,6 +100,6 @@ First major changeset. Released as version **0.1**.
 
 Next version:
 
-* start work on the acl library methods
+* start work on the ACL library methods
 * create basic UI to manage role + permissions
 * porject name change
