@@ -34,12 +34,14 @@
 					<td><?= $role->name; ?></td>
 					<td><?= $role->description; ?></td>
 					<td>
-						<? if(is_array($role->perms)) foreach($role->perms as $perm): ?>
-						<?= $perm->name; ?>
-						<? endforeach; ?>
+						<ul>
+							<? if(is_array($role->perms)) foreach($role->perms as $perm): ?>
+							<li><?= $perm->name; ?></li>
+							<? endforeach; ?>
+						</ul>
 					</td>
 					<td>
-						<?= anchor('acl/role/edit', '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
+						<?= anchor('acl/role/edit/' . $role->role_id, '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
 						<?= anchor('acl/role/del/' . $role->role_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
 					</td>
 				</tr>

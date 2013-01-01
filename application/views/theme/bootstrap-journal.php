@@ -12,6 +12,7 @@
 		<?php if(ENVIRONMENT !== 'production'): ?>
 			<!-- development css -->
 			<link href="<?php echo base_url('./asset/css/bootstrap.css'); ?>" rel="stylesheet">
+			<link href="<?php echo base_url('./asset/css/font-awesome.css'); ?>" rel="stylesheet">
 			<style>
 				body {
 					padding-top: 60px; /* 60px to make container sit under topbar */

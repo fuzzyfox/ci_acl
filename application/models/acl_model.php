@@ -23,9 +23,9 @@
  * 
  * @package		ACL
  * @subpackage	Models
- * @author		William Duyck <wemd2@kent.ac.uk>
+ * @author		William Duyck <fuzzyfox0@gmail.com>
  *
- * @todo	test logic, not just sytax
+ * @todo	write a unit test suite for this model
  */
 class ACL_model extends CI_model {
 	
@@ -125,8 +125,8 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function edit_user($user_id, $data) {
-		$this->db->update($this->_config->table['user'], $data, array('user_id' => $user_id));
-		return ($this->db->affected_rows() == 1);
+		return $this->db->update($this->_config->table['user'], $data, array('user_id' => $user_id));
+//		return ($this->db->affected_rows() == 1);
 	}
 	
 	/*
@@ -259,14 +259,14 @@ class ACL_model extends CI_model {
 	/**
 	 * update a roles data
 	 *
-	 * @param	int		$role_id	the unique identifier for the role
-	 * @param	string	$data		the new roles data	
+	 * @param	int			$role_id	the unique identifier for the role
+	 * @param	assoc_array	$data		the new roles data	
 	 * @return	boolean	TRUE/FALSE - whether update was successful
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function edit_role($role_id, $data) {
-		$this->db->update($this->_config->table['role'], $data, array('role_id' => $role_id));
-		return ($this->db->affected_rows() == 1);
+		return $this->db->update($this->_config->table['role'], $data, array('role_id' => $role_id));
+//		return ($this->db->affected_rows() == 1);
 	}
 	
 	/*
@@ -323,6 +323,38 @@ class ACL_model extends CI_model {
 			'perm_id' => $perm_id
 		));
 		return ($this->db->affected_rows() == 1);
+	}
+	
+	/**
+	 * Edit role permissions
+	 *
+	 * Essensially this method assigns permissions to a role. This method will return FALSE 
+	 * if **ANY** of the assignments fail.
+	 *
+	 * @param	int		$role_id	the unique identifier for the role
+	 * @param	array	$perm_array	an array of identifiers for the permissions to assign
+	 * @return	boolean	TRUE/FALSE - whether or not **ALL** assignments were successful
+	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 *
+	 * @todo	rework to check for changes rather than bulk remove then add permissions each time
+	 * @todo	add in some better error reporting to detail which assignemnts fail and why
+	 */
+	public function edit_role_perms($role_id, $perm_array) {
+		// bulk delete permissions for the role
+		$this->db->delete($this->_config->table['role_perm'], array('role_id' => $role_id));
+		
+		// assume permissions all fail to set
+		$rtn = TRUE;
+		
+		// add permissions provided in array
+		foreach($perm_array as $item => $perm_id) {
+			if(!$this->add_role_perm($role_id, $perm_id)) {
+				$rtn = FALSE;
+			}
+		}
+		
+		// return TRUE if all permissions set
+		return $rtn;
 	}
 	
 	/*
@@ -403,8 +435,8 @@ class ACL_model extends CI_model {
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 */
 	public function edit_perm($perm_id, $data) {
-		$this->db->update($this->_config->table['perm'], $data, array('perm_id' => $perm_id));
-		return ($this->db->affected_rows() == 1);
+		return $this->db->update($this->_config->table['perm'], $data, array('perm_id' => $perm_id));
+//		return ($this->db->affected_rows() == 1);
 	}
 	
 	/*

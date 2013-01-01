@@ -22,7 +22,9 @@
  * 
  * @package		ACL
  * @subpackage	Controllers
- * @author		William Duyck <wemd2@kent.ac.uk>
+ * @author		William Duyck <fuzzyfox0@gmail.com>
+ *
+ * @todo	document this class
  */
 class User extends CI_controller {
 	
@@ -71,6 +73,19 @@ class User extends CI_controller {
 				show_error('Failed to add user.');
 			}
 		}
+	}
+	
+	public function del($id) {
+		if($this->acl_model->del_user($id)) {
+			redirect('acl/user');
+		}
+		else {
+			show_error('Unable to delete user.');
+		}
+	}
+	
+	public function edit($id) {
+		$this->load->view('acl/beyond-scope', NULL, FALSE, 'bootstrap-journal');
 	}
 }
 

@@ -41,7 +41,8 @@
 						</ul>
 					</td>
 					<td>
-						<?= anchor('acl/user/edit', '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
+						<?= anchor('acl/user/assign/' . $user->user_id, '<i class="icon-group"></i> Assign', array('class' => 'btn btn-small')); ?>
+						<?= anchor('acl/user/edit/' . $user->user_id, '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
 						<?= anchor('acl/user/del/' . $user->user_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
 					</td>
 				</tr>

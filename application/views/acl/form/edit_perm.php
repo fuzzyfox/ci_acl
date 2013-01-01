@@ -1,4 +1,4 @@
-<?= form_open('acl/perm/add', array('class' => 'form-horizontal well')); ?>
+<?= form_open('acl/perm/edit/' . $perm->perm_id, array('class' => 'form-horizontal well')); ?>
 	<fieldset>
 		<legend>Edit Permission</legend>
 		

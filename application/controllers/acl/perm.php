@@ -22,7 +22,9 @@
  * 
  * @package		ACL
  * @subpackage	Controllers
- * @author		William Duyck <wemd2@kent.ac.uk>
+ * @author		William Duyck <fuzzyfox0@gmail.com>
+ *
+ * @todo	document this class
  */
 class Perm extends CI_controller {
 	
@@ -80,11 +82,11 @@ class Perm extends CI_controller {
 				'description'	=> $this->input->post('description')
 			);
 			
-			if($this->acl_model->edit_perm($data)) {
+			if($this->acl_model->edit_perm($id, $data)) {
 				redirect('acl/perm');
 			}
 			else {
-				show_error('Failed to add role');
+				show_error('Failed to edit role');
 			}
 		}
 	}

@@ -22,7 +22,7 @@
  * 
  * @package		ACL
  * @subpackage	Controllers
- * @author		William Duyck <wemd2@kent.ac.uk>
+ * @author		William Duyck <fuzzyfox0@gmail.com>
  */
 class ACL extends CI_controller {
 	

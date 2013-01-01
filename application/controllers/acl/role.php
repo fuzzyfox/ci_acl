@@ -22,7 +22,9 @@
  * 
  * @package		ACL
  * @subpackage	Controllers
- * @author		William Duyck <wemd2@kent.ac.uk>
+ * @author		William Duyck <fuzzyfox0@gmail.com>
+ *
+ * @todo	document this class
  */
 class Role extends CI_controller {
 	
@@ -63,7 +65,46 @@ class Role extends CI_controller {
 	}
 	
 	public function edit($id) {
-		echo 'edit';
+		$this->form_validation->set_rules('name',			'Name',			'trim|required|max_length[70]|unique['.$this->acl_table['role'].'.name]');
+		$this->form_validation->set_rules('slug',			'Slug',			'trim|strtolower|required|max_length[35]|unique['.$this->acl_table['role'].'.slug]');
+		$this->form_validation->set_rules('description',	'Description',	'trim');
+		
+		$data['role']			= $this->acl_model->get_role($id);
+		$data['role']->perms	= $this->acl_model->get_role_perms($id);
+		$data['perm_list']		= $this->acl_model->get_all_perms();
+		
+		foreach($data['perm_list'] as &$perm) {
+			$perm->set = in_array($perm, $data['role']->perms);
+		}
+		
+		if($this->form_validation->run() == FALSE) {
+			$this->load->view('acl/form/edit_role.php', $data, FALSE, 'bootstrap-journal');
+		}
+		else {
+			$old_data = array(
+				'name'			=> $data['role']->name,
+				'slug'			=> $data['role']->slug,
+				'description'	=> $data['role']->description
+			);
+			
+			$old_perms = array();
+			if(is_array($data['role']->perms)) foreach($data['role']->perms as $perm) {
+				$old_perms[] = $perm->perm_id;
+			}
+			
+			$data = array(
+				'name'			=> $this->input->post('name'),
+				'slug'			=> $this->input->post('slug'),
+				'description'	=> $this->input->post('description')
+			);
+			
+			if($this->acl_model->edit_role($id, $data) && $this->acl_model->edit_role_perms($id, $this->input->post('perms'))) {
+				redirect('acl/role');
+			}
+			else {
+				show_error('Failed to edit role.');
+			}
+		}
 	}
 	
 	public function del($id) {
