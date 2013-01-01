@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">50</span></a></li>
+                <span class="label label-info">64</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">11</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -72,7 +72,10 @@
 <li class="method public "><a href="#method_del_user_role" title="del_user_role :: remove user from role"><span class="description">remove user from role</span><pre>del_user_role()</pre></a></li>
 <li class="method public "><a href="#method_edit_perm" title="edit_perm :: update a permission"><span class="description">update a permission</span><pre>edit_perm()</pre></a></li>
 <li class="method public "><a href="#method_edit_role" title="edit_role :: update a roles data"><span class="description">update a roles data</span><pre>edit_role()</pre></a></li>
+<li class="method public "><a href="#method_edit_role_perms" title="edit_role_perms :: Edit role permissions"><span class="description">Edit role permissions</span><pre>edit_role_perms()</pre></a></li>
 <li class="method public "><a href="#method_edit_user" title="edit_user :: update user details"><span class="description">update user details</span><pre>edit_user()</pre></a></li>
+<li class="method public "><a href="#method_edit_user_roles" title="edit_user_roles :: "><span class="description">edit_user_roles()
+        </span><pre>edit_user_roles()</pre></a></li>
 <li class="method public "><a href="#method_get_all_perms" title="get_all_perms :: get all permissions"><span class="description">get all permissions</span><pre>get_all_perms()</pre></a></li>
 <li class="method public "><a href="#method_get_all_roles" title="get_all_roles :: get all roles details"><span class="description">get all roles details</span><pre>get_all_roles()</pre></a></li>
 <li class="method public "><a href="#method_get_all_users" title="get_all_users :: get all users details"><span class="description">get all users details</span><pre>get_all_users()</pre></a></li>
@@ -124,11 +127,11 @@ user roles and permissions</p></div>
 </tr>
 <tr>
 <th>author</th>
-<td><a href="mailto:wemd2@kent.ac.uk">William Duyck</a></td>
+<td><a href="mailto:fuzzyfox0@gmail.com">William Duyck</a></td>
 </tr>
 <tr>
 <th>todo</th>
-<td>test logic, not just sytax</td>
+<td>write a unit test suite for this model</td>
 </tr>
 </table>
 <h3>
@@ -374,7 +377,7 @@ user roles and permissions</p></div>
 </div>
 <a id="method_edit_role"></a><div class="element clickable method public method_edit_role" data-toggle="collapse" data-target=".method_edit_role .collapse">
 <h2>update a roles data</h2>
-<pre>edit_role(int $role_id, string $data) : boolean</pre>
+<pre>edit_role(int $role_id, \assoc_array $data) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -388,10 +391,43 @@ user roles and permissions</p></div>
 <code>int</code><p>the unique identifier for the role</p></div>
 <div class="subelement argument">
 <h4>$data</h4>
-<code>string</code><p>the new roles data</p></div>
+<code>\assoc_array</code><p>the new roles data</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>TRUE/FALSE - whether update was successful</div>
+</div></div>
+</div>
+<a id="method_edit_role_perms"></a><div class="element clickable method public method_edit_role_perms" data-toggle="collapse" data-target=".method_edit_role_perms .collapse">
+<h2>Edit role permissions</h2>
+<pre>edit_role_perms(int $role_id, array $perm_array) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Essensially this method assigns permissions to a role. This method will return FALSE
+if <strong>ANY</strong> of the assignments fail.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>author</th>
+<td><a href="mailto:fuzzyfox0@gmail.com">William Duyck</a></td>
+</tr>
+<tr>
+<th>todo</th>
+<td>rework to check for changes rather than bulk remove then add permissions each time</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>add in some better error reporting to detail which assignemnts fail and why</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$role_id</h4>
+<code>int</code><p>the unique identifier for the role</p></div>
+<div class="subelement argument">
+<h4>$perm_array</h4>
+<code>array</code><p>an array of identifiers for the permissions to assign</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>TRUE/FALSE - whether or not **ALL** assignments were successful</div>
 </div></div>
 </div>
 <a id="method_edit_user"></a><div class="element clickable method public method_edit_user" data-toggle="collapse" data-target=".method_edit_user .collapse">
@@ -414,6 +450,18 @@ user roles and permissions</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>TRUE/FALSE - whether or not the changes were successful</div>
+</div></div>
+</div>
+<a id="method_edit_user_roles"></a><div class="element clickable method public method_edit_user_roles" data-toggle="collapse" data-target=".method_edit_user_roles .collapse">
+<h2>edit_user_roles()
+        </h2>
+<pre>edit_user_roles($user_id, $role_array) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$user_id</h4></div>
+<div class="subelement argument"><h4>$role_array</h4></div>
 </div></div>
 </div>
 <a id="method_get_all_perms"></a><div class="element clickable method public method_get_all_perms" data-toggle="collapse" data-target=".method_get_all_perms .collapse">
@@ -728,10 +776,16 @@ user roles and permissions</p></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"><p>Checks a user has the required permission.</p></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>author</th>
 <td><a href="mailto:fuzzyfox0@gmail.com">William Duyck</a></td>
-</tr></table>
+</tr>
+<tr>
+<th>todo</th>
+<td>add ability to accept arrays of permission slugs</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$user_id</h4>
@@ -750,10 +804,20 @@ user roles and permissions</p></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>author</th>
 <td><a href="mailto:fuzzyfox0@gmail.com">William Duyck</a></td>
-</tr></table>
+</tr>
+<tr>
+<th>todo</th>
+<td>make this function do what it says on the tin</td>
+</tr>
+<tr>
+<th>todo</th>
+<td>add ability to accept arrays of role slugs</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$user_id</h4>
@@ -781,7 +845,7 @@ user roles and permissions</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a11</a> and<br>
-            generated on 2012-12-30T22:48:15Z.<br></footer></div>
+            generated on 2013-01-01T16:11:47Z.<br></footer></div>
 </div>
 </body>
 </html>

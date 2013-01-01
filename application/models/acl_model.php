@@ -544,6 +544,7 @@ class ACL_model extends CI_model {
 	 * @return	boolean	TRUE/FALSE - whether or not the user has role
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
 	 *
+	 * @todo	make this function do what it says on the tin
 	 * @todo	add ability to accept arrays of role slugs
 	 */
 	public function user_has_role($user_id, $slug) {
