@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project version="2.0.0a11" title="">
-  <file path="config/acl.php" hash="80d592dc85439a48d32998064a1f05fe" package="Default">
+  <file path="config/acl.php" hash="1fc20894febdfeb6a7b0139490189d2b" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file config/acl.php</error>
     </parse_markers>
@@ -140,7 +140,7 @@
       <error line="0" code="50007">No page-level DocBlock was found in file config/user_agents.php</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/acl.php" hash="a672c58d89b5e3a3aec34e17aebbcc90" package="Default">
+  <file path="controllers/acl/acl.php" hash="74eb466b0e6e66d08362863ca8849ed7" package="Default">
     <class final="false" abstract="false" namespace="global" line="27" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>ACL</name>
@@ -152,17 +152,27 @@
         <tag line="18" name="subpackage" description="Controllers"/>
         <tag line="18" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
       </docblock>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="ACL\Controllers">
+      <property final="false" static="false" visibility="private" line="29" namespace="global" package="Default">
+        <name>$acl_conf</name>
+        <default/>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="31" package="ACL\Controllers">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="ACL\Controllers">
         <name>index</name>
         <full_name>index</full_name>
       </method>
     </class>
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file controllers/acl/acl.php</error>
-      <error line="29" code="50010">No DocBlock was found for method index()</error>
+      <error line="29" code="50018">No DocBlock was found for property $acl_conf</error>
+      <error line="31" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="40" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/perm.php" hash="084e9dcc2cce58ecbd340a313ddfaed1" package="Default">
+  <file path="controllers/acl/perm.php" hash="6c52f4644d5d9bcc46df7319b9f24e08" package="Default">
     <class final="false" abstract="false" namespace="global" line="29" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>Perm</name>
@@ -187,25 +197,25 @@
         <name>add</name>
         <full_name>add</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="ACL\Controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="72" package="ACL\Controllers">
         <name>edit</name>
         <full_name>edit</full_name>
-        <argument line="68">
+        <argument line="72">
           <name>$id</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="94" package="ACL\Controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="102" package="ACL\Controllers">
         <name>del</name>
         <full_name>del</full_name>
-        <argument line="94">
+        <argument line="102">
           <name>$id</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="103" package="ACL\Controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="115" package="ACL\Controllers">
         <name>index</name>
         <full_name>index</full_name>
       </method>
@@ -215,12 +225,12 @@
       <error line="31" code="50018">No DocBlock was found for property $acl_table</error>
       <error line="33" code="50010">No DocBlock was found for method __construct()</error>
       <error line="43" code="50010">No DocBlock was found for method add()</error>
-      <error line="68" code="50010">No DocBlock was found for method edit()</error>
-      <error line="94" code="50010">No DocBlock was found for method del()</error>
-      <error line="103" code="50010">No DocBlock was found for method index()</error>
+      <error line="72" code="50010">No DocBlock was found for method edit()</error>
+      <error line="102" code="50010">No DocBlock was found for method del()</error>
+      <error line="115" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/role.php" hash="41c34e8850a4bb55420a1677aae1bc87" package="Default">
+  <file path="controllers/acl/role.php" hash="bdf3f2c809b987bb22c69c4683be751a" package="Default">
     <class final="false" abstract="false" namespace="global" line="29" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>Role</name>
@@ -245,25 +255,25 @@
         <name>add</name>
         <full_name>add</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="67" package="ACL\Controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="71" package="ACL\Controllers">
         <name>edit</name>
         <full_name>edit</full_name>
-        <argument line="67">
+        <argument line="71">
           <name>$id</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="106" package="ACL\Controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="114" package="ACL\Controllers">
         <name>del</name>
         <full_name>del</full_name>
-        <argument line="106">
+        <argument line="114">
           <name>$id</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="115" package="ACL\Controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="127" package="ACL\Controllers">
         <name>index</name>
         <full_name>index</full_name>
       </method>
@@ -273,12 +283,12 @@
       <error line="31" code="50018">No DocBlock was found for property $acl_table</error>
       <error line="33" code="50010">No DocBlock was found for method __construct()</error>
       <error line="43" code="50010">No DocBlock was found for method add()</error>
-      <error line="67" code="50010">No DocBlock was found for method edit()</error>
-      <error line="106" code="50010">No DocBlock was found for method del()</error>
-      <error line="115" code="50010">No DocBlock was found for method index()</error>
+      <error line="71" code="50010">No DocBlock was found for method edit()</error>
+      <error line="114" code="50010">No DocBlock was found for method del()</error>
+      <error line="127" code="50010">No DocBlock was found for method index()</error>
     </parse_markers>
   </file>
-  <file path="controllers/acl/user.php" hash="67c72da53b6a9222a303a1b3dbe3bd21" package="Default">
+  <file path="controllers/acl/user.php" hash="a96e766468a0c33526a715ad578d0545" package="Default">
     <class final="false" abstract="false" namespace="global" line="29" package="ACL\Controllers">
       <extends>\CI_controller</extends>
       <name>User</name>
@@ -303,36 +313,58 @@
         <name>index</name>
         <full_name>index</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="53" package="ACL\Controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="58" package="ACL\Controllers">
         <name>add</name>
         <full_name>add</full_name>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="78" package="ACL\Controllers">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="87" package="ACL\Controllers">
         <name>del</name>
         <full_name>del</full_name>
-        <argument line="78">
-          <name>$id</name>
-          <default/>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="87" package="ACL\Controllers">
-        <name>edit</name>
-        <full_name>edit</full_name>
         <argument line="87">
           <name>$id</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="91" package="ACL\Controllers">
-        <name>assign</name>
-        <full_name>assign</full_name>
-        <argument line="91">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="100" package="ACL\Controllers">
+        <name>edit</name>
+        <full_name>edit</full_name>
+        <argument line="100">
           <name>$id</name>
           <default/>
           <type/>
         </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="108" package="ACL\Controllers">
+        <name>assign</name>
+        <full_name>assign</full_name>
+        <argument line="108">
+          <name>$id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="149" package="ACL\Controllers">
+        <name>sign_in</name>
+        <full_name>sign_in</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="181" package="ACL\Controllers">
+        <name>_valid_sign_in</name>
+        <full_name>_valid_sign_in</full_name>
+        <argument line="181">
+          <name>$password</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="181">
+          <name>$email</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="192" package="ACL\Controllers">
+        <name>sign_out</name>
+        <full_name>sign_out</full_name>
       </method>
     </class>
     <parse_markers>
@@ -340,10 +372,13 @@
       <error line="31" code="50018">No DocBlock was found for property $acl_table</error>
       <error line="33" code="50010">No DocBlock was found for method __construct()</error>
       <error line="43" code="50010">No DocBlock was found for method index()</error>
-      <error line="53" code="50010">No DocBlock was found for method add()</error>
-      <error line="78" code="50010">No DocBlock was found for method del()</error>
-      <error line="87" code="50010">No DocBlock was found for method edit()</error>
-      <error line="91" code="50010">No DocBlock was found for method assign()</error>
+      <error line="58" code="50010">No DocBlock was found for method add()</error>
+      <error line="87" code="50010">No DocBlock was found for method del()</error>
+      <error line="100" code="50010">No DocBlock was found for method edit()</error>
+      <error line="108" code="50010">No DocBlock was found for method assign()</error>
+      <error line="149" code="50010">No DocBlock was found for method sign_in()</error>
+      <error line="181" code="50010">No DocBlock was found for method _valid_sign_in()</error>
+      <error line="192" code="50010">No DocBlock was found for method sign_out()</error>
     </parse_markers>
   </file>
   <file path="controllers/welcome.php" hash="cc854a830832815cc276e59a7b92058a" package="Default">
@@ -465,7 +500,7 @@ $this-&amp;gt;load-&amp;gt;view('my_view', NULL, FALSE, 'my_template');
       <error line="0" code="50007">No page-level DocBlock was found in file errors/error_php.php</error>
     </parse_markers>
   </file>
-  <file path="models/acl_model.php" hash="c8ea3067d03d3cd15537e1f3f8327fd3" package="Default">
+  <file path="models/acl_model.php" hash="d2ce6513d21ef3320c492d9c30466603" package="Default">
     <class final="false" abstract="false" namespace="global" line="30" package="ACL\Models">
       <extends>\CI_model</extends>
       <name>ACL_model</name>
@@ -1114,60 +1149,59 @@ if &lt;strong&gt;ANY&lt;/strong&gt; of the assignments fail.&lt;/p&gt;</long-des
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="524" package="ACL\Models">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="518" package="ACL\Models">
         <name>user_has_perm</name>
         <full_name>user_has_perm</full_name>
-        <docblock line="512">
+        <docblock line="506">
           <description>user permission check</description>
           <long-description>&lt;p&gt;Checks a user has the required permission.&lt;/p&gt;</long-description>
-          <tag line="512" name="param" description="the user to check permission on" type="string" variable="$user_id">
+          <tag line="506" name="param" description="the user to check permission on" type="string" variable="$user_id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="512" name="param" description="the permission required" type="string" variable="$slug">
+          <tag line="506" name="param" description="the permission required" type="string" variable="$slug">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="512" name="return" description="TRUE/FALSE - whether or not user has permission" type="boolean">
+          <tag line="506" name="return" description="TRUE/FALSE - whether or not user has permission" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="512" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
-          <tag line="512" name="todo" description="add ability to accept arrays of permission slugs"/>
+          <tag line="506" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+          <tag line="506" name="todo" description="add ability to accept arrays of permission slugs"/>
         </docblock>
-        <argument line="524">
+        <argument line="518">
           <name>$user_id</name>
           <default/>
           <type/>
         </argument>
-        <argument line="524">
+        <argument line="518">
           <name>$slug</name>
           <default/>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="550" package="ACL\Models">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="544" package="ACL\Models">
         <name>user_has_role</name>
         <full_name>user_has_role</full_name>
-        <docblock line="539">
+        <docblock line="534">
           <description>user role check</description>
           <long-description/>
-          <tag line="539" name="param" description="the unique identifier for the uer" type="int" variable="$user_id">
+          <tag line="534" name="param" description="the unique identifier for the uer" type="int" variable="$user_id">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="539" name="param" description="the role required" type="string" variable="$slug">
+          <tag line="534" name="param" description="the role required" type="string" variable="$slug">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="539" name="return" description="TRUE/FALSE - whether or not the user has role" type="boolean">
+          <tag line="534" name="return" description="TRUE/FALSE - whether or not the user has role" type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="539" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
-          <tag line="539" name="todo" description="make this function do what it says on the tin"/>
-          <tag line="539" name="todo" description="add ability to accept arrays of role slugs"/>
+          <tag line="534" name="author" description="William Duyck &lt;fuzzyfox0@gmail.com&gt;"/>
+          <tag line="534" name="todo" description="add ability to accept arrays of role slugs"/>
         </docblock>
-        <argument line="550">
+        <argument line="544">
           <name>$user_id</name>
           <default/>
           <type/>
         </argument>
-        <argument line="550">
+        <argument line="544">
           <name>$slug</name>
           <default/>
           <type/>
@@ -1214,22 +1248,27 @@ if &lt;strong&gt;ANY&lt;/strong&gt; of the assignments fail.&lt;/p&gt;</long-des
       <error line="0" code="50007">No page-level DocBlock was found in file views/acl/form/edit_role.php</error>
     </parse_markers>
   </file>
+  <file path="views/acl/form/sign_in.php" hash="209031db78124dbfd153dc68925cbb5f" package="Default">
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file views/acl/form/sign_in.php</error>
+    </parse_markers>
+  </file>
   <file path="views/acl/index.php" hash="87f4d34e4fecd415e243b73dbe29aabb" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file views/acl/index.php</error>
     </parse_markers>
   </file>
-  <file path="views/acl/perm.php" hash="fb9bda1f0634f324216c3fb3e2bdcfa7" package="Default">
+  <file path="views/acl/perm.php" hash="0ed152753388ce84a886d53028217c60" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file views/acl/perm.php</error>
     </parse_markers>
   </file>
-  <file path="views/acl/role.php" hash="73315d30ddedc41c1651f807147d8293" package="Default">
+  <file path="views/acl/role.php" hash="8bb77a2a0445d5349c96342ae143aeec" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file views/acl/role.php</error>
     </parse_markers>
   </file>
-  <file path="views/acl/user.php" hash="149870bfb87c743a88ce7a99b79ff960" package="Default">
+  <file path="views/acl/user.php" hash="4a4728e98d0d3ce3b98d68f1505fe9a5" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file views/acl/user.php</error>
     </parse_markers>
@@ -1239,7 +1278,7 @@ if &lt;strong&gt;ANY&lt;/strong&gt; of the assignments fail.&lt;/p&gt;</long-des
       <error line="0" code="50007">No page-level DocBlock was found in file views/theme/bootstrap-journal/footer.php</error>
     </parse_markers>
   </file>
-  <file path="views/theme/bootstrap-journal/header.php" hash="ac09332b187c9840bb1b74a91d33414a" package="Default">
+  <file path="views/theme/bootstrap-journal/header.php" hash="5c27c1596c0048b530926e5625598a1d" package="Default">
     <parse_markers>
       <error line="0" code="50007">No page-level DocBlock was found in file views/theme/bootstrap-journal/header.php</error>
     </parse_markers>
@@ -1261,7 +1300,7 @@ if &lt;strong&gt;ANY&lt;/strong&gt; of the assignments fail.&lt;/p&gt;</long-des
   </package>
   <package name="Default" full_name="Default"/>
   <namespace name="global" full_name="global"/>
-  <marker count="11">todo</marker>
+  <marker count="10">todo</marker>
   <marker count="0">fixme</marker>
   <deprecated count="0"/>
 </project>
