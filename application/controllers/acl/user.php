@@ -36,11 +36,16 @@ class User extends CI_controller {
 		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
 		
-		$this->acl_table = (object)$this->config->item('acl');
-		$this->acl_table =& $this->acl_table->table;
+		$this->acl_conf = (object)$this->config->item('acl');
+		$this->acl_table =& $this->acl_conf->table;
 	}
 	
 	public function index() {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'view_users')) {
+			redirect('acl');
+		}
+		
+		$this->db->order_by('name', 'asc');
 		$data['user_list'] = $this->acl_model->get_all_users();
 		
 		foreach($data['user_list'] as &$user) {
@@ -51,6 +56,10 @@ class User extends CI_controller {
 	}
 	
 	public function add() {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'add_user')) {
+			redirect('acl');
+		}
+		
 		$this->form_validation->set_rules('name',				'Name',				'trim|required|max_length[70]');
 		$this->form_validation->set_rules('email',				'Email',			'trim|strtolower|required|valid_email|unique['.$this->acl_table['user'].'.email]');
 		$this->form_validation->set_rules('password',			'Password',			'required|min_length[8]');
@@ -76,6 +85,10 @@ class User extends CI_controller {
 	}
 	
 	public function del($id) {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'delete_user')) {
+			redirect('acl');
+		}
+		
 		if($this->acl_model->del_user($id)) {
 			redirect('acl/user');
 		}
@@ -85,10 +98,18 @@ class User extends CI_controller {
 	}
 	
 	public function edit($id) {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'edit_user')) {
+			redirect('acl');
+		}
+		
 		$this->load->view('acl/beyond-scope', NULL, FALSE, 'bootstrap-journal');
 	}
 	
 	public function assign($id) {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'assign_role')) {
+			redirect('acl');
+		}
+		
 		$this->form_validation->set_rules('roles[]', 'Roles', 'required');
 		
 		if($this->form_validation->run() == FALSE) {
@@ -116,6 +137,70 @@ class User extends CI_controller {
 			else {
 				show_error('Failed assign user.');
 			}
+		}
+	}
+	
+	/*
+	| -------------------------------------------------------------------
+	| User sign in methods
+	| -------------------------------------------------------------------
+	*/
+	
+	public function sign_in() {
+		if($this->acl_conf->sign_in_enabled) {
+			if(!$this->session->userdata('signed_in')) {
+				$this->form_validation->set_rules('email',		'Email',	'trim|strtolower|required|valid_email|!is_unique['.$this->acl_table['user'].'.email]');
+				$this->form_validation->set_rules('password',	'Password',	'required|callback__valid_sign_in['.$this->input->post('email').']');
+			
+				$this->form_validation->set_message('email', FALSE);
+			
+				if($this->form_validation->run() == FALSE) {
+					$this->load->view('acl/form/sign_in', NULL, FALSE, 'bootstrap-journal');
+				}
+				else {
+					$user = $this->acl_model->get_user_by('email', $this->input->post('email'));
+				
+					$this->session->set_userdata(array(
+						'user_id'	=> $user[0]->user_id,
+						'email'		=> $this->input->post('email'),
+						'signed_in'	=> TRUE
+					));
+				
+					redirect('acl');
+				}
+			}
+			else {
+				redirect('acl');
+			}
+		}
+		else {
+			show_404();
+		}
+	}
+	
+	public function _valid_sign_in($password, $email) {
+		$email		= trim(strtolower($email));
+		$password	= hash('sha512', $password);
+		
+		$user = $this->acl_model->get_user_by('email', $email);
+		
+		$this->form_validation->set_message('_valid_sign_in', 'Invalid sign in credentials.');
+		
+		return ($user !== FALSE) ? ($user[0]->password == $password) : FALSE;
+	}
+	
+	public function sign_out() {
+		if($this->acl_conf->sign_in_enabled) {
+			if($this->session->userdata('signed_in')) {
+				$this->session->sess_destroy();
+				
+				redirect('');
+			}
+			
+			show_error('You need to be signed in to sign out!', 401);
+		}
+		else {
+			show_404();
 		}
 	}
 }

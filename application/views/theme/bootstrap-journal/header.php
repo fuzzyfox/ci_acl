@@ -6,25 +6,24 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</a>
-			<?php echo anchor('', 'ci_acl', array('class' => 'brand')); ?>
+			<?php echo anchor('acl', 'ci_acl', array('class' => 'brand')); ?>
 			<div class="nav-collapse collapse">
+				<? if($this->session->userdata('signed_in')): ?>
 				<ul class="nav pull-right">
 					<li class="dropdown" id="current-user">
 						<a href="#current-user" data-toggle="dropdown" class="dropdown-toggle">
-							Doe, John
+							<?= $this->session->userdata('email'); ?>
 							<b class="caret"></b>
 						</a>
+						
 						<ul class="dropdown-menu">
-							<li><?php echo anchor('', 'Profile'); ?></li>
-							<li><?php echo anchor('', 'Settings'); ?></li>
-							<li class="divider"></li>
-							<li><?php echo anchor('', 'Sign Out'); ?></li>
+							<li><?php echo anchor('acl/user/sign_out', 'Sign out'); ?></li>
 						</ul>
 					</li>
 				</ul>
-				<ul class="nav">
-					
-				</ul>
+				<? else: ?>
+				<?php echo anchor('acl/user/sign_in', 'Sign in', array('class' => 'btn btn-primary pull-right')); ?>
+				<? endif; ?>
 			</div>
 		</div>
 	</div>

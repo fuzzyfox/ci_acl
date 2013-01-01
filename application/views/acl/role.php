@@ -23,7 +23,6 @@
 					<th>slug</th>
 					<th>name</th>
 					<th>description</th>
-					<th>permissions</th>
 					<th>action</th>
 				</tr>
 			</thead>
@@ -34,15 +33,8 @@
 					<td><?= $role->name; ?></td>
 					<td><?= $role->description; ?></td>
 					<td>
-						<ul>
-							<? if(is_array($role->perms)) foreach($role->perms as $perm): ?>
-							<li><?= $perm->name; ?></li>
-							<? endforeach; ?>
-						</ul>
-					</td>
-					<td>
-						<?= anchor('acl/role/edit/' . $role->role_id, '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
-						<?= anchor('acl/role/del/' . $role->role_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
+						<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'edit_role')) ? anchor('acl/role/edit/' . $role->role_id, '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')) : NULL; ?>
+						<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'delete_role')) ? anchor('acl/role/del/' . $role->role_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')) : NULL; ?>
 					</td>
 				</tr>
 				<? endforeach; ?>
@@ -54,6 +46,13 @@
 		<? endif; ?>
 	</div>
 	<div class="span4">
-		<?= str_replace('form-horizontal', '', $this->load->view('acl/form/add_role', NULL, TRUE)); ?>
+		<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'add_role')) ? str_replace('form-horizontal', '', $this->load->view('acl/form/add_role', NULL, TRUE)) : NULL; ?>
+		
+		<? if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'add_role')): ?>
+		<div class="well">
+			<h4>Add Role</h4>
+			<p>You do not have permission to view this form</p>
+		</div>
+		<? endif; ?>
 	</div>
 </div>

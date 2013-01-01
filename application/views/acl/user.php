@@ -7,11 +7,6 @@
 			<li><?= anchor('acl/role', 'Roles'); ?></li>
 			<li><?= anchor('acl/perm', 'Permissions'); ?></li>
 		</ul>
-		
-		<!--<ul class="breadcrumb">
-			<li><a href="#">ACL</a> <span class="divider">/</span></li>
-			<li class="active">Users<li>
-		</ul>-->
 	</div>
 </div>
 
@@ -41,9 +36,9 @@
 						</ul>
 					</td>
 					<td>
-						<?= anchor('acl/user/assign/' . $user->user_id, '<i class="icon-group"></i> Assign', array('class' => 'btn btn-small')); ?>
-						<?= anchor('acl/user/edit/' . $user->user_id, '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
-						<?= anchor('acl/user/del/' . $user->user_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
+						<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'assign_role')) ? anchor('acl/user/assign/' . $user->user_id, '<i class="icon-group"></i> Assign', array('class' => 'btn btn-small')) : NULL; ?>
+						<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'edit_user')) ? anchor('acl/user/edit/' . $user->user_id, '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')) : NULL; ?>
+						<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'delete_user')) ? anchor('acl/user/del/' . $user->user_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')) : NULL; ?>
 					</td>
 				</tr>
 				<? endforeach; ?>
@@ -55,6 +50,13 @@
 		<? endif; ?>
 	</div>
 	<div class="span4">
-		<?= str_replace('form-horizontal', '', $this->load->view('acl/form/add_user', NULL, TRUE)); ?>
+		<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'add_user')) ? str_replace('form-horizontal', '', $this->load->view('acl/form/add_user', NULL, TRUE)) : NULL; ?>
+		
+		<? if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'add_user')): ?>
+		<div class="well">
+			<h4>Add User</h4>
+			<p>You do not have permission to view this form</p>
+		</div>
+		<? endif; ?>
 	</div>
 </div>

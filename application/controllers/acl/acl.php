@@ -26,7 +26,27 @@
  */
 class ACL extends CI_controller {
 	
+	private $acl_conf;
+	
+	public function __construct() {
+		parent::__construct();
+		
+		$this->load->helper(array('url'));
+		$this->load->model('acl_model');
+		
+		$this->acl_conf = (object)$this->config->item('acl');
+	}
+	
 	public function index() {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'access_acl')) {
+			if($this->acl_conf->sign_in_enabled) {
+				redirect('acl/user/sign_in');
+			}
+			else {
+				redirect('');
+			}
+		}
+		
 		$this->load->view('acl/index', NULL, FALSE, 'bootstrap-journal');
 	}
 }

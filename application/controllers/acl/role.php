@@ -41,6 +41,10 @@ class Role extends CI_controller {
 	}
 	
 	public function add() {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'add_role')) {
+			show_error('Permission denied.', 401);
+		}
+		
 		$this->form_validation->set_rules('name',			'Name',			'trim|required|max_length[70]|unique['.$this->acl_table['role'].'.name]');
 		$this->form_validation->set_rules('slug',			'Slug',			'trim|strtolower|required|max_length[35]|unique['.$this->acl_table['role'].'.slug]');
 		$this->form_validation->set_rules('description',	'Description',	'trim');
@@ -65,6 +69,10 @@ class Role extends CI_controller {
 	}
 	
 	public function edit($id) {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'edit_role')) {
+			show_error('Permission denied.', 401);
+		}
+		
 		$this->form_validation->set_rules('name',			'Name',			'trim|required|max_length[70]|unique['.$this->acl_table['role'].'.name]');
 		$this->form_validation->set_rules('slug',			'Slug',			'trim|strtolower|required|max_length[35]|unique['.$this->acl_table['role'].'.slug]');
 		$this->form_validation->set_rules('description',	'Description',	'trim');
@@ -104,6 +112,10 @@ class Role extends CI_controller {
 	}
 	
 	public function del($id) {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'delete_role')) {
+			show_error('Permission denied.', 401);
+		}
+		
 		if($this->acl_model->del_role($id)) {
 			redirect('acl/role');
 		}
@@ -113,6 +125,11 @@ class Role extends CI_controller {
 	}
 	
 	public function index() {
+		if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'view_roles')) {
+			show_error('Permission denied.', 401);
+		}
+		
+		$this->db->order_by('name', 'asc');
 		$data['role_list'] = $this->acl_model->get_all_roles();
 		
 		foreach($data['role_list'] as &$role) {

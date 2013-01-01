@@ -33,8 +33,8 @@
 					<td><?= $perm->name; ?></td>
 					<td><?= $perm->description; ?></td>
 					<td>
-						<?= anchor('acl/perm/edit/' . $perm->perm_id, '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')); ?>
-						<?= anchor('acl/perm/del/' . $perm->perm_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')); ?>
+						<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'edit_perm')) ? anchor('acl/perm/edit/' . $perm->perm_id, '<i class="icon-edit"></i> Edit', array('class' => 'btn btn-small')) : NULL; ?>
+						<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'delete_perm')) ? anchor('acl/perm/del/' . $perm->perm_id, '<i class="icon-remove icon-white"></i> Delete', array('class' => 'btn btn-danger btn-small')) : NULL; ?>
 					</td>
 				</tr>
 				<? endforeach; ?>
@@ -46,6 +46,13 @@
 		<? endif; ?>
 	</div>
 	<div class="span4">
-		<?= str_replace('form-horizontal', '', $this->load->view('acl/form/add_perm', NULL, TRUE)); ?>
+		<?= ($this->acl_model->user_has_perm($this->session->userdata('user_id'), 'add_perm')) ? str_replace('form-horizontal', '', $this->load->view('acl/form/add_perm', NULL, TRUE)) : NULL; ?>
+		
+		<? if(!$this->acl_model->user_has_perm($this->session->userdata('user_id'), 'add_perm')): ?>
+		<div class="well">
+			<h4>Add Permission</h4>
+			<p>You do not have permission to view this form</p>
+		</div>
+		<? endif; ?>
 	</div>
 </div>

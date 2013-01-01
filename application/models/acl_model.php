@@ -479,28 +479,22 @@ class ACL_model extends CI_model {
 		$rtn = array();
 		
 		// get users roles
-		$roles = $this->get_user_role($user_id);
+		$role_list = $this->get_user_roles($user_id);
 		
 		// check role(s) set
-		if($roles === FALSE) {
-			return $rtn;
-		}
-		
 		// for each role get its perms and add them to return array
-		foreach($roles as $role) {
+		if(is_array($role_list)) foreach($role_list as $role) {
 			// get role perms
-			$perms = $this->get_role_perms($role->role_id);
+			$perm_list = $this->get_role_perms($role->role_id);
 			
 			// check perms assigned to role
-			if($perms === FALSE) {
-				return $rtn;
+			if(is_array($perm_list)) foreach($perm_list as $perm) {
+				$rtn[] = $perm;
 			}
-			
-			array_push($rtn, $perms);
 		}
 		
 		// return permission value total and return
-		return array_unique($rtn);
+		return $rtn;
 	}
 	
 	/*
@@ -522,17 +516,18 @@ class ACL_model extends CI_model {
 	 * @todo	add ability to accept arrays of permission slugs
 	 */
 	public function user_has_perm($user_id, $slug) {
-		$perms = $this->get_user_perms($user_id);
+		$user_perms = $this->get_user_perms($user_id);
 		
+		// chek the user has some permissions
 		// loop through users permissions and check for the slug
-		foreach($perms as $perm) {
+		if(is_array($user_perms)) foreach($user_perms as $perm) {
 			// if slug is found then return TRUE
-			if($perm->slug === $slug) {
+			if($perm->slug == $slug) {
 				return TRUE;
 			}
 		}
 		
-		// if we make it to here the user doesn't have permission
+		// if we get here the user has no permissions
 		return FALSE;
 	}
 	
@@ -543,12 +538,19 @@ class ACL_model extends CI_model {
 	 * @param	string	$slug		the role required
 	 * @return	boolean	TRUE/FALSE - whether or not the user has role
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
-	 *
-	 * @todo	make this function do what it says on the tin
+	 * 
 	 * @todo	add ability to accept arrays of role slugs
 	 */
 	public function user_has_role($user_id, $slug) {
-		return ($this->get_user_roles($user_id) !== FALSE);
+		$user_roles = $this->get_user_roles($user_id);
+		
+		if(is_array($user_roles)) foreach($role_list as $role) {
+			if($role->slug == $slug) {
+				return TRUE;
+			}
+		}
+		
+		return FALSE;
 	}
 }
 
