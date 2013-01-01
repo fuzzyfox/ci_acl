@@ -87,6 +87,37 @@ class User extends CI_controller {
 	public function edit($id) {
 		$this->load->view('acl/beyond-scope', NULL, FALSE, 'bootstrap-journal');
 	}
+	
+	public function assign($id) {
+		$this->form_validation->set_rules('roles[]', 'Roles', 'required');
+		
+		if($this->form_validation->run() == FALSE) {
+			$data['user']			= $this->acl_model->get_user($id);
+			$data['user']->roles	= $this->acl_model->get_user_roles($id);
+			$data['role_list']		= $this->acl_model->get_all_roles();
+			
+			if(is_array($data['user']->roles)) {
+				foreach($data['role_list'] as &$role) {
+					$role->set = in_array($role, $data['user']->roles);
+				}
+			}
+			else {
+				foreach($data['role_list'] as &$role) {
+					$role->set = FALSE;
+				}
+			}
+			
+			$this->load->view('acl/form/assign_user', $data, FALSE, 'bootstrap-journal');
+		}
+		else {
+			if($this->acl_model->edit_user_roles($id, $this->input->post('roles'))) {
+				redirect('acl/user');
+			}
+			else {
+				show_error('Failed assign user.');
+			}
+		}
+	}
 }
 
 /* End of file user.php */

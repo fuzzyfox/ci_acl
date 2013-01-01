@@ -185,6 +185,24 @@ class ACL_model extends CI_model {
 		return ($this->db->affected_rows() == 1);
 	}
 	
+	public function edit_user_roles($user_id, $role_array) {
+		// bulk delete permissions for the role
+		$this->db->delete($this->_config->table['user_role'], array('user_id' => $user_id));
+		
+		// assume permissions all fail to set
+		$rtn = TRUE;
+		
+		// add permissions provided in array
+		foreach($role_array as $item => $role_id) {
+			if(!$this->add_user_role($user_id, $role_id)) {
+				$rtn = FALSE;
+			}
+		}
+		
+		// return TRUE if all permissions set
+		return $rtn;
+	}
+	
 	/*
 	| -------------------------------------------------------------------
 	|  role specific methods
@@ -500,6 +518,8 @@ class ACL_model extends CI_model {
 	 * @param	string	$slug		the permission required
 	 * @return	boolean	TRUE/FALSE - whether or not user has permission
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 *
+	 * @todo	add ability to accept arrays of permission slugs
 	 */
 	public function user_has_perm($user_id, $slug) {
 		$perms = $this->get_user_perms($user_id);
@@ -523,6 +543,8 @@ class ACL_model extends CI_model {
 	 * @param	string	$slug		the role required
 	 * @return	boolean	TRUE/FALSE - whether or not the user has role
 	 * @author	William Duyck <fuzzyfox0@gmail.com>
+	 *
+	 * @todo	add ability to accept arrays of role slugs
 	 */
 	public function user_has_role($user_id, $slug) {
 		return ($this->get_user_roles($user_id) !== FALSE);

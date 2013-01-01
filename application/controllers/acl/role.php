@@ -69,29 +69,25 @@ class Role extends CI_controller {
 		$this->form_validation->set_rules('slug',			'Slug',			'trim|strtolower|required|max_length[35]|unique['.$this->acl_table['role'].'.slug]');
 		$this->form_validation->set_rules('description',	'Description',	'trim');
 		
-		$data['role']			= $this->acl_model->get_role($id);
-		$data['role']->perms	= $this->acl_model->get_role_perms($id);
-		$data['perm_list']		= $this->acl_model->get_all_perms();
-		
-		foreach($data['perm_list'] as &$perm) {
-			$perm->set = in_array($perm, $data['role']->perms);
-		}
-		
 		if($this->form_validation->run() == FALSE) {
+			$data['role']			= $this->acl_model->get_role($id);
+			$data['role']->perms	= $this->acl_model->get_role_perms($id);
+			$data['perm_list']		= $this->acl_model->get_all_perms();
+			
+			if(is_array($data['role']->perms)) {
+				foreach($data['perm_list'] as &$perm) {
+					$perm->set = in_array($perm, $data['role']->perms);
+				}
+			}
+			else {
+				foreach($data['perm_list'] as &$perm) {
+					$perm->set = FALSE;
+				}
+			}
+			
 			$this->load->view('acl/form/edit_role.php', $data, FALSE, 'bootstrap-journal');
 		}
 		else {
-			$old_data = array(
-				'name'			=> $data['role']->name,
-				'slug'			=> $data['role']->slug,
-				'description'	=> $data['role']->description
-			);
-			
-			$old_perms = array();
-			if(is_array($data['role']->perms)) foreach($data['role']->perms as $perm) {
-				$old_perms[] = $perm->perm_id;
-			}
-			
 			$data = array(
 				'name'			=> $this->input->post('name'),
 				'slug'			=> $this->input->post('slug'),
@@ -108,7 +104,12 @@ class Role extends CI_controller {
 	}
 	
 	public function del($id) {
-		echo 'delete';
+		if($this->acl_model->del_role($id)) {
+			redirect('acl/role');
+		}
+		else {
+			show_error('Unable to delete role');
+		}
 	}
 	
 	public function index() {
