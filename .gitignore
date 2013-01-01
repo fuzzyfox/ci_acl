@@ -1,7 +1,7 @@
 # Project specific #
 ####################
 !acl_schema.sql
-
+!acl_install.sql
 
 # Generic Files #
 #################
